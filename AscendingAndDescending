@@ -41,3 +41,24 @@ public static void AscedingAndDescendingInArray()
                 Console.Write(des + " ");
             }
         }
+***************************************************************************
+public static void FindLargestAndSmallestlengthinArray()
+        {
+            string[] arr = { "Orange", "fig", "guava", "banana", "apple" };
+            string largelength = arr[0];
+            string smalllength = arr[0];
+
+            foreach(string iteam in arr) 
+            {
+                if (iteam.Length < smalllength.Length)
+                {
+                    smalllength = iteam;
+                }
+                if(iteam.Length > largelength.Length)
+                {
+                    largelength = iteam;
+                }
+            }
+            Console.WriteLine(largelength);
+            Console.WriteLine(smalllength);
+        }
