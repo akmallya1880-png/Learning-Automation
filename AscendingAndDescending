@@ -1,0 +1,43 @@
+Ascending and Descending of Numbers
+public static void AscedingAndDescendingInArray()
+        {
+            int[] arr = { 3, 56, 77, 42, 998, 345, 652, 12 };
+            int temp;
+               for (int i = 0; i < arr.Length; i++)
+                {
+                    for (int j = i + 1; j < arr.Length; j++)
+                    {
+                        if (arr[i] > arr[j])
+                        {
+                            temp = arr[i];
+                            arr[i] = arr[j];
+                            arr[j] = temp;
+                        }
+                    }
+                }
+            
+            foreach(int aes in arr)
+            {
+                Console.Write(aes + " ");
+            }
+            Console.WriteLine();
+            foreach (int num in arr)
+            {
+                for(int i = 0;i < arr.Length; i++)
+                {
+                    for(int j = i + 1;j < arr.Length; j++)
+                    {
+                        if (arr[i] < arr[j])
+                        {
+                            temp = arr[i];
+                            arr[i] = arr[j];
+                            arr[j] = temp;
+                        }
+                    }
+                }
+            }
+            foreach(int des in arr)
+            {
+                Console.Write(des + " ");
+            }
+        }
