@@ -83,3 +83,54 @@ public static void DuplicatesinaStringdiffway()
                 }
             }
         }
+*********************************************************************************************************
+Remove Duplicate Integer
+public static void RemoveDuplicatesFromUnSoratedArray()
+        {
+            int[] arr = { 66, 89, 54, 66, 32, 89, 44, 44 };
+            List<int> elements = new List<int>();
+            foreach(var element in arr)
+            {
+                if (!elements.Contains(element))
+                {
+                    elements.Add(element);
+                }
+            }
+            Console.Write("Unique Number are: "+ String.Join(", ", elements));
+        }
+*********************************************************************************************************
+Remove Duplicate Character
+public static void RemoveDuplicateCharinString()
+        {
+            string name = "praveen natarajan";
+            char[] characters = name.Replace(" ","").ToCharArray();
+            List<char> unique = new List<char>();
+            foreach(char c in characters)
+            {
+                if (!unique.Contains(c))
+                {
+                    unique.Add(c);
+                }
+            }
+            Console.Write("Uniquie character are : " +  String.Join(", ", unique));
+
+*********************************************************************************************************
+Remove Duplicate Word
+public static void RemoveSuplicatesWordinString()
+        {
+            string Words = "Apple banana Apple orange kiwi kiwi";
+            string[] arrWord = Words.Split(" ").ToArray();
+            List<string> duplicates = new List<string>();
+            foreach(string s in arrWord)
+            {
+                if (!duplicates.Contains(s))
+                {
+                    duplicates.Add(s);
+                }
+            }
+            Console.WriteLine("revoved duplicates word are : " + String.Join(" ",duplicates));
+        }
+
+
+			
+
