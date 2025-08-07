@@ -1,1 +1,85 @@
+Duplicate Integer
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
+{
+    public class DuplictaesPrograme
+    {
+        public static void Main(string[]args)
+        {
+            int[] arr = { 66, 89, 54, 66, 32, 89, 44, 44 };
+            Dictionary<int, int> dupicatescount = new Dictionary<int, int>();
+            for(int i = 0; i < arr.Length; i++)// index  i starts from O and arr.length starts from 1
+            {
+                if (dupicatescount.ContainsKey(arr[i]))// Is asking for key of duplicatescount//arr[0]
+                {
+                    dupicatescount[arr[i]]++;
+                }
+                else
+                {
+                    dupicatescount[arr[i]]=1;
+                }
+            }
+            foreach(var pair in dupicatescount)
+            {
+                if (pair.Value > 1)
+                {
+                    Console.WriteLine(pair);
+                }
+            }
+                
+            
+        }
+    }
+*********************************************************************************************************
+Duplicate String
+public static void DuplicatesinaStringdiffway()
+        {
+            string name = "praveen natarajan";
+            Dictionary<char,int> charcounts = new Dictionary<char,int>();
+            foreach(char c in name.Replace(" " ,""))
+            {
+                if (charcounts.ContainsKey(c))
+                {
+                    charcounts[c]++;
+                }
+                else
+                {
+                    charcounts[c] = 1;
+                }
+
+            }
+            foreach (var pair in charcounts)
+            {
+                if (pair.Value > 1)
+                {
+                    Console.WriteLine("Unique Number are: " + String.Join(", ", pair.Key));
+                    Console.WriteLine("Unique Number are: " + String.Join(", ", pair));
+                }
+            }
+*********************************************************************************************************
+			Duplicate Word
+ public static void FindDuplicatesWordInString()
+        {
+            string Words = "Apple banana Apple orange kiwi kiwi";
+            string[] arrWord = Words.Split(" ").ToArray();
+            Dictionary<string,int> Duplicates = new Dictionary<string,int>();
+            for(int i = 0; i < arrWord.Length; i++) { 
+                if (Duplicates.ContainsKey(arrWord[i]))
+                {
+                    Duplicates[arrWord[i]]++;
+                }
+                else
+                {
+                    Duplicates[arrWord[i]] =1;
+                }
+            }
+            foreach(var pair in Duplicates)
+            {
+                if (pair.Value > 1) 
+                {
+                    Console.WriteLine(pair);
+                }
+            }
+        }
