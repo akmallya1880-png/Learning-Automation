@@ -159,4 +159,33 @@ public class HelloWorld
             
     }
 }
-
+**************************************************************************************
+Remove Duplicate and Sort
+  public static void SortAscendingunSortDuplicatediff()
+        {
+            int[] arr = { 3, 56, 77, 42, 998, 345, 652, 12, 77, 998 };
+            List<int> unique = new List<int>();
+            foreach(int nu in arr)
+            {
+                if (!unique.Contains(nu))
+                {
+                    unique.Add(nu);
+                }
+            }
+            int[] uniarr= unique.ToArray();
+            int temp;
+            foreach (int num in unique)
+            {
+                for (int i = 0; i < uniarr.Length; i++)
+                {
+                    for (int j = i + 1; j < uniarr.Length; j++)
+                    {
+                        if (uniarr[i] > uniarr[j])
+                        {
+                            temp = uniarr[i];
+                            uniarr[i] = uniarr[j];
+                            uniarr[j] = temp;
+                        }
+                    }
+                }
+            }
