@@ -37,8 +37,9 @@ Duplicate String
 public static void DuplicatesinaStringdiffway()
         {
             string name = "praveen natarajan";
+            string names=name.Replace(" " ,"");
             Dictionary<char,int> charcounts = new Dictionary<char,int>();
-            foreach(char c in name.Replace(" " ,""))
+            foreach(char c in names)
             {
                 if (charcounts.ContainsKey(c))
                 {
