@@ -2,7 +2,7 @@ Ascending and Descending of Numbers
 public static void AscedingAndDescendingInArray()
         {
             int[] arr = { 3, 56, 77, 42, 998, 345, 652, 12 };
-            int temp=0;
+            int temp;
                for (int i = 0; i < arr.Length; i++)
                 {
                     for (int j = i + 1; j < arr.Length; j++)
