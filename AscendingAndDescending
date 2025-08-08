@@ -63,6 +63,7 @@ public static void FindLargestAndSmallestlengthinArray()
             Console.WriteLine(smalllength);
         }
 **************************************************************************************
+Sort a string of Array based on their length
 public static void SortaStringOfArraybasedOntheirLength()
         {
             string[] arr = { "Orange", "fig", "guava", "banana", "apple" };
@@ -108,3 +109,54 @@ public static void SortaStringOfArraybasedOntheirLength()
                 Console.WriteLine(iteam);
             }
         }
+
+**************************************************************************************
+Sort of an Array of Odd and Even
+using System;
+using System.Collections.Generic;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+       int[] arr = { 3, 56, 77, 42, 998, 345, 652, 12 };
+            List<int> even = new List<int>();
+            List<int> odd = new List<int>();
+            int temp;
+
+            foreach(int n in arr)
+            {
+                for(int i =0; i < arr.Length; i++)
+                {
+                    for(int j = i + 1; j< arr.Length; j++)
+                    {
+                        if (arr[i] > arr[j])
+                        {
+                            temp = arr[i];
+                            arr[i] = arr[j];
+                            arr[j] = temp;
+                        }
+                    }
+                }
+            }
+            foreach(int num in arr)
+            {
+                if (num % 2 == 0)  
+                {
+                    even.Add(num); 
+                }
+                else 
+                {
+                odd.Add(num); 
+                }
+            }
+    
+            odd.AddRange(even);
+            foreach(var c in odd)// when returns are not sure
+            {
+                Console.WriteLine(c);
+            }
+            
+    }
+}
+
