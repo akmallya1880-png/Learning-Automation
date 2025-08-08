@@ -1,4 +1,5 @@
-﻿using System;
+﻿Reversal of String
+using System;
 using System.Collections.Generic;
 
 
@@ -17,3 +18,17 @@ namespace ProgrammingPractice
             Console.WriteLine(result);
         }
 o/p-najaratan neevarP
+*********************************************************************************************************************
+Reversal of Word
+public static void reversalofWord()
+        {
+            string name = " Praveen Natarajan";
+            string[] arrname = name.Split(' ');
+            string reverse = "";
+            for (int i = arrname.Length - 1; i >= 0; i--)
+            {
+                reverse += arrname[i] + " ";
+            }
+            Console.WriteLine(reverse);
+        }
+O/P-- Natarajan Praveen
