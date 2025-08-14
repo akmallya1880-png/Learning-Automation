@@ -1,6 +1,7 @@
 Selenium Interview Questions & Answers – C#
 1. Wait Types and Syntax
-Implicit Wait: Waits globally for elements. Syntax:
+Implicit Wait: Waits globally for elements.
+ Syntax:
 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
  Explicit
 Wait: Waits for a condition on a specific element.
