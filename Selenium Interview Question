@@ -1,125 +1,65 @@
-Selenium Interview Questions and Answers
-1. What kind of wait will you use: Explicit or Implicit wait and its syntax?
-🔹 Implicit Wait – Definition
-
-Implicit Wait tells the WebDriver to wait for a specified amount of time while locating an element before throwing a NoSuchElementException. It applies globally to all elements in the driver instance and is checked repeatedly until the timeout is reached.
+Selenium Interview Questions & Answers – C#
+1. Wait Types and Syntax
+Implicit Wait: Waits globally for elements. Syntax:
 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-Explicit Wait – Definition
-
-Explicit Wait is a conditional wait where WebDriver waits for a specific condition to occur before proceeding. It applies only to targeted elements and allows fine-grained control over synchronization, such as waiting until an element is visible, clickable, or contains specific text.
-WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-IWebElement element = wait.Until(
-    SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Id("username"))
-);
-
-#######################################################################################
-2. What are the methods used in driver?
-
-Method	What it Does	Remember As
-get(url)	Opens a website	Go to page
-getTitle()	Gets page title	Page tab name
-getCurrentUrl()	Gets current page URL	Where am I now?
-findElement(By)	Finds one item	Get one thing
-findElements(By)	Finds many items	Get many things
-navigate().to()	Navigate to URL	Travel
-navigate().back()	Go to previous page	Back
-navigate().forward()	Go to next page	Forward
-navigate().refresh()	Reload page	Refresh
-manage().window().maximize()	Maximize browser	Big window
-close()	Close current window	One tab close
-quit()	Close all windows	Quit everything
-
-3. How will you handle dropdowns?
-Select dropdown = new Select(driver.findElement(By.id("dropdownId")));
-dropdown.selectByVisibleText("Option 1");
-dropdown.selectByValue("value");
-dropdown.selectByIndex(2);
-4. How will you handle frames and come out of the frame?
-Switch into frame:
-driver.switchTo().frame("frameName");
-
-Exit frame:
-driver.switchTo().defaultContent();
-5. What is the return type of WebElement and WebElements?
-- findElement() → WebElement
-- findElements() → List<WebElement>
-6. How will you handle Alert and its types with syntax?
-Alert alert = driver.switchTo().alert();
-alert.accept();
-alert.dismiss();
-alert.getText();
-alert.sendKeys("Text");
-
-Types: Simple Alert, Confirmation Alert, Prompt Alert
-7. How will you handle multiple windows?
-String parent = driver.getWindowHandle();
-Set<String> allWindows = driver.getWindowHandles();
-for (String win : allWindows) {
-    if (!win.equals(parent)) {
-        driver.switchTo().window(win);
-        driver.close();
-    }
-}
-driver.switchTo().window(parent);
-8. How do you handle Authentication popup (username & password)?
-driver.get("https://username:password@yourURL.com");
-9. Screenshot syntax
-TakesScreenshot ts = (TakesScreenshot) driver;
-File src = ts.getScreenshotAs(OutputType.FILE);
-FileUtils.copyFile(src, new File("path/to/save.png"));
-10. If click is not working, what’s the next option?
-Use JavaScript Executor:
-JavascriptExecutor js = (JavascriptExecutor) driver;
-js.executeScript("arguments[0].click();", element);
-11. If JavaScript Executor is not working, what's the next option?
-Use Actions class:
+ Explicit
+Wait: Waits for a condition on a specific element.
+ Syntax: WebDriverWait wait =new WebDriverWait(driver, TimeSpan.FromSeconds(10)); 
+IWebElement element = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Id("userna
+me")));
+2. Common Driver Methods
+Navigate().GoToUrl(url) - Opens site Title - Gets title Url - Gets current URL
+FindElement(By) - One element FindElements(By) - Multiple elements
+Navigate().Back(), Forward(), Refresh() Manage().Window.Maximize() Close(),
+Quit()
+3. Handle Dropdown
+SelectElement dropdown = new
+SelectElement(driver.FindElement(By.Id("dropdownId")));
+dropdown.SelectByText("Option 1"); dropdown.SelectByValue("value");
+dropdown.SelectByIndex(2);
+4. Handle Frames
+driver.SwitchTo().Frame("frameName"); driver.SwitchTo().DefaultContent();
+5. Return Types
+FindElement() → IWebElement FindElements() → IReadOnlyCollection
+6. Handle Alerts
+IAlert alert = driver.SwitchTo().Alert(); alert.Accept(); alert.Dismiss(); string
+text = alert.Text; alert.SendKeys("Text");
+7. Multiple Windows
+string parent = driver.CurrentWindowHandle; var allWindows =
+driver.WindowHandles; foreach (var win in allWindows) { if (win != parent) {
+driver.SwitchTo().Window(win); driver.Close(); } }
+driver.SwitchTo().Window(parent);
+8. Auth Popup
+driver.Navigate().GoToUrl("https://username:password@yourURL.com");
+9. Screenshot
+ITakesScreenshot ts = (ITakesScreenshot)driver; Screenshot screenshot =
+ts.GetScreenshot(); screenshot.SaveAsFile("path.png", ScreenshotImageFormat.Png);
+10. Click Alternative
+IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+js.ExecuteScript("arguments[0].click();", element);
+11. Actions Click
 Actions actions = new Actions(driver);
-actions.moveToElement(element).click().perform();
-12. How do you scroll down?
-JavascriptExecutor js = (JavascriptExecutor) driver;
-js.executeScript("window.scrollBy(0,500);");
-13. What is using statement?
-In C#:
-using OpenQA.Selenium;
-Also used to auto-dispose resources:
-using (IWebDriver driver = new ChromeDriver()) {
-    driver.Navigate().GoToUrl("https://example.com");
-}
-14. What kind of Exceptions do you often get?
-- StaleElementReferenceException
-- ElementClickInterceptedException
-- NoSuchElementException
-- TimeoutException
-15. What is try and catch?
-try {
-    driver.findElement(By.id("btn")).click();
-} catch (Exception e) {
-    System.out.println("Error: " + e.getMessage());
-}
-16. What is XPath and its types?
-- Absolute XPath: /html/body/div[1]/a
-- Relative XPath: //a[@id='link']
-17. What are Axes-based XPaths?
-- following-sibling
-- preceding-sibling
-- parent
-- ancestor
-- descendant
-- child
-
-Example:
-//div[@id='main']//following-sibling::p
-##################################################################
-18. How do you handle Web Tables?
-List<WebElement> rows = driver.findElements(By.xpath("//table/tbody/tr"));
-for (WebElement row : rows) {
-    List<WebElement> cols = row.findElements(By.tagName("td"));
-    for (WebElement col : cols) {
-        System.out.println(col.getText());
-    }
-}
-######################################################
-19. What is Serialization and De-serialization?
-- Serialization: converting object into byte stream
-- Deserialization: converting byte stream back to object
-Used in Selenium for session storage or in API testing with JSON
+actions.MoveToElement(element).Click().Perform();
+12. Scroll
+IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+js.ExecuteScript("window.scrollBy(0,500);");
+13. Using Statement
+using OpenQA.Selenium; using (IWebDriver driver = new ChromeDriver()) {
+driver.Navigate().GoToUrl("https://example.com"); }
+14. Common Exceptions
+StaleElementReferenceException ElementClickInterceptedException
+NoSuchElementException TimeoutException
+15. Try Catch
+try { driver.FindElement(By.Id("btn")).Click(); } catch (Exception e) {
+Console.WriteLine("Error: " + e.Message); }
+16. XPath Types
+Absolute: /html/body/div[1]/a Relative: //a[@id='link']
+17. Axes XPath
+following-sibling, preceding-sibling, parent, ancestor, descendant, child
+Example: //div[@id='main']//following-sibling::p
+18. Web Tables
+var rows = driver.FindElements(By.XPath("//table/tbody/tr")); foreach (var row in
+rows) { var cols = row.FindElements(By.TagName("td")); foreach (var col in cols)
+{ Console.WriteLine(col.Text); } }
+19. Serialization
+Serialization: Object → Byte stream Deserialization: Byte stream → Object
