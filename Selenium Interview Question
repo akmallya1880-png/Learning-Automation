@@ -3,8 +3,7 @@ Selenium Interview Questions & Answers – C#
 Implicit Wait: Waits globally for elements.
  Syntax:
 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
- Explicit
-Wait: Waits for a condition on a specific element.
+ Explicit Wait: Waits for a condition on a specific element.
  Syntax: WebDriverWait wait =new WebDriverWait(driver, TimeSpan.FromSeconds(10)); 
 IWebElement element = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Id("userna
 me")));
