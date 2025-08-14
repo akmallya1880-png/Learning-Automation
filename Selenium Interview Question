@@ -1,22 +1,17 @@
 Selenium Interview Questions and Answers
 1. What kind of wait will you use: Explicit or Implicit wait and its syntax?
-Implicit Wait → good for basic global sync.
-// Set implicit wait to 10 seconds
+🔹 Implicit Wait – Definition
+
+Implicit Wait tells the WebDriver to wait for a specified amount of time while locating an element before throwing a NoSuchElementException. It applies globally to all elements in the driver instance and is checked repeatedly until the timeout is reached.
 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+Explicit Wait – Definition
 
-Explicit Wait → best for element-specific conditions (like visibility, clickability, etc.).
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using SeleniumExtras.WaitHelpers; // Needed for ExpectedConditions
-
-// Create Explicit Wait of 10 seconds
+Explicit Wait is a conditional wait where WebDriver waits for a specific condition to occur before proceeding. It applies only to targeted elements and allows fine-grained control over synchronization, such as waiting until an element is visible, clickable, or contains specific text.
 WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+IWebElement element = wait.Until(
+    SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Id("username"))
+);
 
-// Wait until element is visible
-IWebElement element = wait.Until(ExpectedConditions.ElementIsVisible(By.Id("username")));
-
-// Perform action after wait
-element.SendKeys("testuser");
 #######################################################################################
 2. What are the methods used in driver?
 
