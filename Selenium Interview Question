@@ -5,7 +5,7 @@ Implicit Wait: Waits globally for elements.
 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
  Explicit Wait: Waits for a condition on a specific element.
  Syntax: WebDriverWait wait =new WebDriverWait(driver, TimeSpan.FromSeconds(10)); 
-IWebElement element = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Id("userna
+IWebElement element = wait.Until(ExpectedConditions.ElementIsVisible(By.Id("userna
 me")));
 2. Common Driver Methods
 Navigate().GoToUrl(url) - Opens site Title - Gets title Url - Gets current URL
