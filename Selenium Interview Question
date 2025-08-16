@@ -77,19 +77,24 @@ driver.SwitchTo().Window(parent);|
 #########################################################################################
 8. How do you handle Authentication popup (username & password)?
 driver.Navigate().GoToUrl("https://username:password@yourURL.com");
+###########################################################################
 9. Screenshot syntax
 ITakesScreenshot ts = (ITakesScreenshot)driver;
 Screenshot screenshot = ts.GetScreenshot();
 screenshot.SaveAsFile("path/to/save.png", ScreenshotImageFormat.Png);
+###########################################################################
 10. If click is not working, what’s the next option?
 IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
 js.ExecuteScript("arguments[0].click();", element);
+###########################################################################
 11. If JavaScript Executor is not working, what's the next option?
 Actions actions = new Actions(driver);
 actions.MoveToElement(element).Click().Perform();
+###########################################################################
 12. How do you scroll down?
 IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
 js.ExecuteScript("window.scrollBy(0,500);");
+###########################################################################
 13. What is using statement?
 Namespace Import
 using OpenQA.Selenium;
@@ -98,6 +103,7 @@ using (IWebDriver driver = new ChromeDriver())
 {
     driver.Navigate().GoToUrl("https://example.com");
 }
+###########################################################################
 14. What kind of Exceptions do you often get?
 
 StaleElementReferenceException
@@ -107,6 +113,7 @@ ElementClickInterceptedException
 NoSuchElementException
 
 TimeoutException
+###########################################################################
 15. What is try and catch?
 try
 {
@@ -116,11 +123,13 @@ catch (Exception e)
 {
     Console.WriteLine("Error: " + e.Message);
 }
+###########################################################################
 16. What is XPath and its types?
 
 Absolute XPath: /html/body/div[1]/a
 
 Relative XPath: //a[@id='link']
+###########################################################################
 
 17. What are Axes-based XPaths?
 
@@ -139,6 +148,7 @@ child
 Example:
 
 //div[@id='main']//following-sibling::p
+###########################################################################
 
 18. How do you handle Web Tables?
 var rows = driver.FindElements(By.XPath("//table/tbody/tr"));
@@ -150,7 +160,7 @@ foreach (var row in rows)
         Console.WriteLine(col.Text);
     }
 }
-
+###########################################################################
 19. What is Serialization and Deserialization?
 
 Serialization: Converting an object into a byte stream.
