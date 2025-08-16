@@ -125,13 +125,19 @@ NoSuchElementException → locator is wrong or element not yet available.
 TimeoutException → wait condition not met in given time.
 ###########################################################################
 15. What is try and catch?
+try → "Let me try this risky action."
+
+catch → "If something goes wrong (error/exception), I will catch it and handle it instead of crashing."
 try
 {
-    driver.FindElement(By.Id("btn")).Click();
+    // Risky action: Finding and clicking a button
+    IWebElement button = driver.FindElement(By.Id("submit"));
+    button.Click();
 }
-catch (Exception e)
+catch (NoSuchElementException ex)
 {
-    Console.WriteLine("Error: " + e.Message);
+    // Handling error: If button not found
+    Console.WriteLine("Submit button not found! " + ex.Message);
 }
 ###########################################################################
 16. What is XPath and its types?
