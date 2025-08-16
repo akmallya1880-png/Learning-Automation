@@ -96,12 +96,22 @@ IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
 js.ExecuteScript("window.scrollBy(0,500);");
 ###########################################################################
 13. What is using statement?
-Namespace Import
+In C#, the using statement is used to automatically close and clean up resources when we are done using them.
+In Selenium, the IWebDriver (like ChromeDriver) supports this, so if we write code inside a using block, the browser will automatically close after the block
+ ends.
 using OpenQA.Selenium;
-Auto-dispose Resource
-using (IWebDriver driver = new ChromeDriver())
+using OpenQA.Selenium.Chrome;
+
+class Program
 {
-    driver.Navigate().GoToUrl("https://example.com");
+    static void Main(string[] args)
+    {
+        using (IWebDriver driver = new ChromeDriver())
+        {
+            driver.Navigate().GoToUrl("https://google.com");
+            Console.WriteLine(driver.Title);
+        } // Browser closes automatically here
+    }
 }
 ###########################################################################
 14. What kind of Exceptions do you often get?
