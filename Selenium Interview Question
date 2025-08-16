@@ -116,16 +116,13 @@ class Program
 ###########################################################################
 14. What kind of Exceptions do you often get?
 
-StaleElementReferenceException
-If the element you found earlier is no longer attached to the DOM (for example, page refreshed, or DOM updated).
+StaleElementReferenceException → element is outdated after page reload/DOM change.
 
-ElementClickInterceptedException
-Selenium tries to click an element, but another element (like popup, overlay, or ad) is blocking it.
+ElementClickInterceptedException → another element is blocking the click.
 
-NoSuchElementException
-Selenium cannot find the element with the locator you gave.
-TimeoutException
-Explicit wait is used, but the condition is not met within the given time.
+NoSuchElementException → locator is wrong or element not yet available.
+
+TimeoutException → wait condition not met in given time.
 ###########################################################################
 15. What is try and catch?
 try
