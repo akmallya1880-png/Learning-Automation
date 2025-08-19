@@ -31,22 +31,28 @@ public static void reversalofWord()
 O/P-- Natarajan Praveen
 
 *********************************************************************************************************************
-public static void RevereachcharinaWord()
+//Reversaleachcharinaword
+using System;
+using System.Collections.Generic;
+class ReversalEachCharInAWord
+{
+    public static void Main(string[]args)
+    {
+        string name="Akshaya Mallya";
+        string []arrname=name.Split(' ');
+        string result="";
+        foreach(string word in arrname)
         {
-            string name = " Praveen Natarajan";
-            string[] arrname = name.Split(" ");
-            string reverse = "";
-            foreach (string word in arrname)
+            for(int i=word.Length-1;i>=0;i--)
             {
-                for (int i = word.Length - 1; i >= 0; i--)
-                {
-                    reverse += word[i];
-                }
-                reverse += " ";
+                result=result+word[i];
             }
-            Console.WriteLine(reverse);
+    
         }
-O/P-neevarP najarataN
+        Console.WriteLine(result);
+    }
+}
+o/p-ayahskAayllaM
 *********************************************************************************************************************
 public static void palindromeofString()
         {
