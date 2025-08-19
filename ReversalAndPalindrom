@@ -19,7 +19,7 @@ o/p-ayllaM ayahskA
 Reversal of Word
 public static void reversalofWord()
         {
-            string name = " Praveen Natarajan";
+            string name = " Akshaya Mallya";
             string[] arrname = name.Split(' ');
             string reverse = "";
             for (int i = arrname.Length - 1; i >= 0; i--)
@@ -28,8 +28,7 @@ public static void reversalofWord()
             }
             Console.WriteLine(reverse);
         }
-O/P-- Natarajan Praveen
-
+O/P--Mallya Akshaya  
 *********************************************************************************************************************
 //Reversaleachcharinaword
 using System;
