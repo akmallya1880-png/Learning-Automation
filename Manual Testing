@@ -1,0 +1,99 @@
+Q1. What is Software Testing?
+👉 Software testing is checking if the application works as expected and finding defects before it goes live.
+
+Q2. What is the difference between Verification and Validation?
+👉 Verification – Are we building the product right? (checking documents, design, code)
+👉 Validation – Are we building the right product? (checking actual application with testing).
+
+Q3. What is the difference between Smoke Testing and Sanity Testing?
+👉 Smoke Testing – Basic check to see if the build is stable.
+👉 Sanity Testing – After changes/fixes, check if specific functionality works.
+
+Q4. What is Regression Testing?
+👉 Testing old functionality again after changes, to ensure nothing is broken.
+
+Q5. What is the difference between Test Case and Test Scenario?
+👉 Test Case – Step-by-step instructions with input, expected output.
+👉 Test Scenario – High-level idea of what to test.
+
+Q6. What are the different levels of testing?
+👉 Unit Testing → Integration Testing → System Testing → UAT (User Acceptance Testing).
+
+Q7. What is the difference between Severity and Priority?
+👉 Severity – How serious the defect is.
+👉 Priority – How fast it should be fixed.
+
+Example: Login button not working = High Severity + High Priority.
+
+Q8. What is Boundary Value Analysis (BVA)?
+👉 Testing at the edge values.
+Example: If input is 1–100, test with 0, 1, 100, 101.
+
+Q9. What is Equivalence Partitioning?
+👉 Divide input into valid and invalid groups.
+Example: Age 18–60 → Test with 20 (valid), 10 (invalid), 70 (invalid).
+
+Q10. What are Common Testing Types?
+👉 Functional Testing, Non-Functional Testing (Performance, Security, Usability), Black Box, White Box, Regression, Retesting.
+
+Q11. What is the Bug Life Cycle (Defect Life Cycle)?
+👉 New → Assigned → Open → Fixed → Retest → Closed → Reopen (if issue still exists).
+
+Q12. What is Retesting vs Regression Testing?
+👉 Retesting – Testing the same bug again after it’s fixed.
+👉 Regression – Testing the entire system to check old features still work.
+
+Q13. What is a Test Plan?
+👉 A document that describes what to test, how to test, who will test, and what tools/resources are needed.
+
+Q14. What is a Test Case? Can you give an example?
+👉 A Test Case is a set of steps with input, expected output, and actual output.
+📌 Example: Login Page Test
+
+Step: Enter valid username & password → Click Login
+
+Expected: User should land on Home page.
+
+Q15. What is Exploratory Testing?
+👉 Testing without test cases, just exploring the app to find defects using domain knowledge.
+
+Q16. What is Ad-hoc Testing?
+👉 Random testing without following any process or documentation.
+
+Q17. What is the difference between Functional and Non-Functional Testing?
+👉 Functional – Check features (login, search, payment).
+👉 Non-Functional – Check performance, speed, security, usability.
+
+Q18. What is Defect Severity vs Priority with Example?
+👉 Severity – How much it impacts functionality.
+👉 Priority – How quickly it should be fixed.
+📌 Example:
+
+Wrong spelling in About Page = Low Severity + Low Priority.
+
+Login not working = High Severity + High Priority.
+
+Q19. What is End-to-End Testing?
+👉 Testing the entire flow of the application.
+📌 Example: E-commerce → Login → Search → Add to Cart → Payment → Logout.
+
+Q20. What is the difference between Static Testing and Dynamic Testing?
+👉 Static – Testing without running code (reviews, walkthroughs).
+👉 Dynamic – Testing by executing the application.
+
+Q21. What is the difference between Positive and Negative Testing?
+👉 Positive Testing – Test with valid inputs (expected behavior).
+👉 Negative Testing – Test with invalid inputs (system should handle error).
+
+Q22. What are Common Documents in Testing?
+👉 Test Plan, Test Case, Test Scenario, RTM (Requirement Traceability Matrix), Bug Report.
+
+Q23. What is RTM (Requirement Traceability Matrix)?
+👉 A document that maps requirements → test cases, to ensure all requirements are covered.
+
+Q24. What is Sanity vs Regression Testing?
+👉 Sanity – Small check after a fix, focusing only on related functionality.
+👉 Regression – Checking the whole system after changes.
+
+Q25. What are Common Bug Tracking Tools?
+👉 JIRA, Bugzilla, HP ALM, Mantis, Trello.
