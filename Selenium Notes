@@ -1,6 +1,6 @@
 1)To start Browser uses the following-
 new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
-driver = new ChromeDriver();
+IWebDriver driver = new ChromeDriver();
 2)Locators-
   //Css selectors traverse= .text-info span:nth-child(1) input
   //xpath selectors traverse=//label[@class='text-info']/span/input
