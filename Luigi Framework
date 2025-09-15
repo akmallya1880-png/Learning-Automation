@@ -1,0 +1,37 @@
+1. Base Class (Foundation Layer)
+
+This class contains common setup and teardown methods used across all tests.
+
+Typical contents:
+
+WebDriver initialization (e.g., launching Chrome, Firefox, Edge).
+
+Browser configurations (timeouts, window maximize, cookies, etc.).
+
+NUnit annotations like 
+Onetimesetup
+Onetimeteardown
+
+Utility integrations (screenshots, reports).
+
+Why we use it: Avoids duplication since every test needs a browser setup and cleanup.
+
+2. Page Object Methods (Page Object Model – POM Layer)
+
+Each webpage / module in the application is represented as a class.
+
+Inside that class, we store:
+
+Locators (By/Xpath/CSS) for elements.
+
+Methods (actions) that interact with those elements
+
+3. Test Cases (Test Layer)
+
+The actual test scripts live here.
+
+They call methods from Page Object classes to perform actions and verify results.
+
+Test layer should only contain test steps and assertions, not locators.
+
+Keeps tests clean, readable, and maintainable.
