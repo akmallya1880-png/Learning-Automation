@@ -1,1 +1,28 @@
+1)To start Browser uses the following-
+new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
+driver = new ChromeDriver();
+2)Locators-
+  //Css selectors traverse= .text-info span:nth-child(1) input
+  //xpath selectors traverse=//label[@class='text-info']/span/input
+  //#id =#terms
+ ID -driver.FindElement(By.Id("username"))
+Name -driver.FindElement(By.Name("password"))
+Link -driver.FindElement(By.LinkText("terms and conditions"))
+CSS-driver.FindElement(By.CssSelector("input[value='Sign In']"))
+Xpath-driver.FindElement(By.XPath("//input[@name='signin']"))
+driver.FindElement(By.XPath("//div[@class='form-group'][5]/label/span/input"))
+3)Implicit Wait- Should be declared globally in the Setup file
+          driver.Manage().Timeouts().ImplicitWait=TimeSpan.FromSeconds(5);
+4)Explicit wait- will be declared when time is taken a little longer than global wait
+WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(8));
+wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Id("signInBtn")));
+5)Dropdown selection-
+  IWebElement dropdown =driver.FindElement(By.XPath("//div [@class='form-group'][4]/select"));
+  SelectElement s= new SelectElement(dropdown);
+  s.SelectByText("Teacher");
+   s.SelectByValue("consult");
+   s.SelectByIndex(0);
 
+6) Setup file contains browser loading, basic functionality
+7)Testup file contains functionality
+8)Teardown file contains browser closing or clearing steps
