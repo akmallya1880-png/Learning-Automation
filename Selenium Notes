@@ -26,3 +26,4 @@ wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Id(
 6) Setup file contains browser loading, basic functionality
 7)Testup file contains functionality
 8)Teardown file contains browser closing or clearing steps
+9) For printing output in Nunit framework -TestContext.Progress.WriteLine(errormessage);
