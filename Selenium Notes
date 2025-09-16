@@ -28,6 +28,9 @@ wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Id(
 7)Testup file contains functionality
 8)Teardown file contains browser closing or clearing steps
 9) For printing output in Nunit framework -TestContext.Progress.WriteLine(errormessage);
+10)Alerts-   driver.SwitchTo().Alert().Accept();-Yes
+   driver.SwitchTo().Alert().Dismiss();-No
+   driver.SwitchTo().Alert().SendKeys("OK");-Enter text
 
 
 
