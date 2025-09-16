@@ -11,6 +11,7 @@ Link -driver.FindElement(By.LinkText("terms and conditions"))
 CSS-driver.FindElement(By.CssSelector("input[value='Sign In']"))
 Xpath-driver.FindElement(By.XPath("//input[@name='signin']"))
 driver.FindElement(By.XPath("//div[@class='form-group'][5]/label/span/input"))
+Contains-driver.FindElement(By.XPath("//th[contains(@aria-label,\"fruit name\")]"));
 3)Implicit Wait- Should be declared globally in the Setup file
           driver.Manage().Timeouts().ImplicitWait=TimeSpan.FromSeconds(5);
 4)Explicit wait- will be declared when time is taken a little longer than global wait
