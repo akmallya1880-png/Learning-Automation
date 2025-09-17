@@ -45,13 +45,20 @@ Javascript helps for scrolling through web page
 IWebElement frameScroll = driver.FindElement(By.Id("courses-iframe"));
 IJavaScriptExecutor js =(IJavaScriptExecutor)driver;
 js.ExecuteScript("arguments[0].scrollIntoView(true);", frameScroll);
-13) Header of Parent and child browser
+13) Header of Parent and child browser(IFrame Concept)
 Switching to Parent browser
      driver.SwitchTo().Frame("courses-iframe");
     driver.FindElement(By.TagName("All Access plan")).Click();
    TestContext.Progress.WriteLine( driver.FindElement(By.TagName("h1")).Text);
     driver.SwitchTo().DefaultContent();
     TestContext.Progress.WriteLine(driver.FindElement(By.TagName("h1")).Text);
+
+14)Switching from Parent to  child Window 
+ driver.FindElement(By.ClassName("blinkingText")).Click();
+TestContext.Progress.WriteLine( driver.WindowHandles.Count);// This takes count of the window(WindowHandles)
+ string ChildWindowName = driver.WindowHandles[1];//It takes place from index 0
+ driver.SwitchTo().Window(ChildWindowName);
+ TestContext.Progress.WriteLine(driver.FindElement(By.CssSelector(".red")).Text);
 
 
 
