@@ -47,11 +47,11 @@ IJavaScriptExecutor js =(IJavaScriptExecutor)driver;
 js.ExecuteScript("arguments[0].scrollIntoView(true);", frameScroll);
 13) Header of Parent and child browser
 Switching to Parent browser
- driver.SwitchTo().Frame("courses-iframe");
- driver.FindElement(By.LinkText("All Access plan")).Click();
-TestContext.Progress.WriteLine( driver.FindElement(By.TagName("h1")).Text);
- driver.SwitchTo().DefaultContent();
- TestContext.Progress.WriteLine(driver.FindElement(By.TagName("h1")).Text);
+     driver.SwitchTo().Frame("courses-iframe");
+    driver.FindElement(By.TagName("All Access plan")).Click();
+   TestContext.Progress.WriteLine( driver.FindElement(By.TagName("h1")).Text);
+    driver.SwitchTo().DefaultContent();
+    TestContext.Progress.WriteLine(driver.FindElement(By.TagName("h1")).Text);
 
 
 
