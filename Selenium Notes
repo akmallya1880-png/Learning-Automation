@@ -31,7 +31,11 @@ wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Id(
 10)Alerts-   driver.SwitchTo().Alert().Accept();-Yes
    driver.SwitchTo().Alert().Dismiss();-No
    driver.SwitchTo().Alert().SendKeys("OK");-Enter text
-
+11) Move cursor of the mouse on the web page the action class are used
+driver.Url = "https://rahulshettyacademy.com/";
+Actions a = new Actions(driver);
+a.MoveToElement(driver.FindElement(By.XPath("//li[@class='dropdown']//a"))).Perform();
+Perform() method performs the currently built actions
 
 
 
