@@ -40,7 +40,11 @@ Important note for actions- always use perform() at the end
 12) For using Frames - We do not have direct elements
  We use the id  of the frame ,name of the frame, index of the frame
 driver.SwitchTo().Frame("courses-iframe");
-
+13) Scroll Functionality using Java script
+Javascript helps for scrolling through web page
+IWebElement frameScroll = driver.FindElement(By.Id("courses-iframe"));
+IJavaScriptExecutor js =(IJavaScriptExecutor)driver;
+js.ExecuteScript("arguments[0].scrollIntoView(true);", frameScroll);
 
 
 
