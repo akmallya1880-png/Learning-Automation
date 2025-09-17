@@ -36,6 +36,7 @@ driver.Url = "https://rahulshettyacademy.com/";
 Actions a = new Actions(driver);
 a.MoveToElement(driver.FindElement(By.XPath("//li[@class='dropdown']//a"))).Perform();
 Perform() method performs the currently built actions
+Important note for actions- always use perform() at the end
 12) For using Frames - We do not have direct elements
  We use the id  of the frame ,name of the frame, index of the frame
 driver.SwitchTo().Frame("courses-iframe");
