@@ -108,3 +108,23 @@ class C : B { }
 class A { }
 class B : A { }
 class C : A { }
+6) Encapsulation- hiding the internal details of the class and exposing what is necessary through public method or properties.
+Encapsulation:
+public class HelloWorld
+{
+private string name;
+public string getName()
+{
+return name;
+}
+public string setName()
+{
+this.name=Name;
+}
+public static void Main(string[]args)
+{
+HelloWorld HP=HelloWorld;
+HP.setName("Ahnay");
+Console.WriteLine(HP.getName);
+}
+}
