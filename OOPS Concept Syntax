@@ -128,3 +128,72 @@ HP.setName("Ahnay");
 Console.WriteLine(HP.getName);
 }
 }
+7)Constructors-special method that is automatically called when an object of a class is created.
+It has the same name as the class name
+It has no return type
+Syntax
+class ClassName
+{
+public ClassName
+{
+}
+}
+Types of Constructors in C#
+1. Default Constructor-Takes no parameters.
+class Student
+{
+    public Student()
+    {
+        Console.WriteLine("Default constructor called");
+    }
+}
+2. Parameterized Constructor-Accepts parameters to initialize fields.
+
+class Student
+{
+    public string Name;
+    public Student(string name)
+    {
+        Name = name;
+    }
+}
+
+3. Copy Constructor-Creates a new object by copying values from another object.
+
+class Student
+{
+    public string Name;
+    public Student(string name)
+    {
+        Name = name;
+    }
+
+    // Copy constructor
+    public Student(Student s)
+    {
+        Name = s.Name;
+    }
+}
+
+4. Static Constructor-Used to initialize static fields.
+
+Runs only once when the class is first used.
+
+No parameters allowed.
+
+class Student
+{
+    static Student()
+    {
+        Console.WriteLine("Static constructor called once");
+    }
+}
+
+5. Private Constructor-Used to restrict object creation outside the class.
+
+Commonly used in Singleton Design Pattern.
+
+class Student
+{
+    private Student() { }
+}
