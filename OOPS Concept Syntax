@@ -95,3 +95,16 @@ class Program
         a.Speak();   // Cat meows
     }
 }
+5) Inheritance - allows one class to acquire the members of another class
+Types of Inheritance:
+# Single Inheritance -One base class → One derived class.
+class A { }
+class B : A { }
+# Multilevel Inheritance -Inheritance across multiple levels (grandparent → parent → child).
+class A { }
+class B : A { }
+class C : B { }
+#Hierarchical Inheritance -One base class → multiple derived classes.
+class A { }
+class B : A { }
+class C : A { }
