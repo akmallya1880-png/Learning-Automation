@@ -164,6 +164,11 @@ child
 Example:
 
 //div[@id='main']//following-sibling::p
+Sibling → Same level (before/after).
+
+Parent/Ancestor → Move upward.
+
+Child/Descendant → Move downward
 ###########################################################################
 
 18. How do you handle Web Tables?
