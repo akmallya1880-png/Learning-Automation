@@ -1,0 +1,31 @@
+1)Collections Syntax
+List-List<string> capital= new List<string>
+Dictionary-Dictionary<string,string> capital= new Dictionary<string,string>
+2)Interface Syntax
+interface Ishape
+{
+void Draw();
+}
+public class Square : IShape
+{
+    public void Draw()
+    {
+        Console.WriteLine("Drawing Square");
+    }
+}
+3)Abstraction Syntax
+public abstract class Shape
+{
+public abstract void Draw();
+public void Display()
+{
+Console.WriteLine("This is a shape");
+}
+
+}
+public class Circle:Shape
+{
+public override void Draw()
+{
+ Console.WriteLine("Drawing Circle");
+}
