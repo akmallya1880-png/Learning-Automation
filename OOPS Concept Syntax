@@ -1,7 +1,7 @@
-1)Collections Syntax
+1)Collections- Group of related data items
 List-List<string> capital= new List<string>
 Dictionary-Dictionary<string,string> capital= new Dictionary<string,string>
-2)Interface Syntax
+2)Interface - Contract in C# which tells what method must be implement and does not give the actually code
 interface Ishape
 {
 void Draw();
@@ -13,13 +13,13 @@ public class Square : IShape
         Console.WriteLine("Drawing Square");
     }
 }
-3)Abstraction Syntax
+3)Abstraction Syntax- Hiding the details and showing the essentials stuffs
 public abstract class Shape
 {
 public abstract void Draw();
 public void Display()
 {
-Console.WriteLine("This is a shape");
+Console.WriteLine("This is a shape")
 }
 
 }
