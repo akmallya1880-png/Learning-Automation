@@ -29,3 +29,69 @@ public override void Draw()
 {
  Console.WriteLine("Drawing Circle");
 }
+
+4) Polymorphism- Many forms
+using the same method name but it does different things depending on the object or input
+#Compile time Polymorphism(Method Overloading)-same Method name but different parameters
+Syntax
+using System;
+class Calculator
+{
+public int add(int a,int b)
+{
+return a+b;
+}
+public double add(double a,double b)
+{
+return a+b;
+}
+}
+class Program
+{
+public  static void Main()
+{
+calculator c= new calculator;
+Console.WriteLine(c.Add(5,10));
+Console.WriteLine(c.Add(5.5,10.5));
+}
+}
+#Runtime Polymorphism-Base class method is redefined in the derived class.
+using System;
+
+class Animal
+{
+    public virtual void Speak()
+    {
+        Console.WriteLine("Animal makes a sound");
+    }
+}
+
+class Dog : Animal
+{
+    public override void Speak()
+    {
+        Console.WriteLine("Dog barks");
+    }
+}
+
+class Cat : Animal
+{
+    public override void Speak()
+    {
+        Console.WriteLine("Cat meows");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Animal a;
+
+        a = new Dog();
+        a.Speak();   // Dog barks
+
+        a = new Cat();
+        a.Speak();   // Cat meows
+    }
+}
