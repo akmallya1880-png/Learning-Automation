@@ -103,8 +103,16 @@ In C#, using statements import required libraries or namespaces, so I can direct
 StaleElementReferenceException → element is outdated after page reload/DOM change.
 
 ElementClickInterceptedException → another element is blocking the click.
-
+*************************************************************************
 NoSuchElementException → locator is wrong or element not yet available.
+"NoSuchElementException in Selenium occurs when the WebDriver cannot find the web element on the page. This usually happens due to two main reasons:
+Incorrect locator: The locator (ID, XPath, CSS selector, etc.) used in the script is wrong, outdated, or doesn’t match the element on the current page.
+Element not yet available: The element exists in the DOM but is not yet loaded or visible when Selenium tries to access it, often due to page load delays or dynamic content.
+To handle this, I follow these best practices:
+Validate locators carefully using browser developer tools.
+Use explicit waits (WebDriverWait) to wait until the element is present, visible, or clickable.
+Avoid relying solely on implicit waits for dynamic elements.
+********************************************************
 
 TimeoutException → wait condition not met in given time.
 ###########################################################################
