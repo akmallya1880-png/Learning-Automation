@@ -60,5 +60,14 @@ TestContext.Progress.WriteLine( driver.WindowHandles.Count);// This takes count 
  driver.SwitchTo().Window(ChildWindowName);
  TestContext.Progress.WriteLine(driver.FindElement(By.CssSelector(".red")).Text);
 
+15) To hard code configuration:
+Right click on the project->New->Application  Configuration File-> Save as App Config
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <appSettings>
+        <add key="browser" value="Chrome"/>// this should be added
+    </appSettings>
+</configuration>
+
 
 
