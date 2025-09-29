@@ -12,9 +12,30 @@ Right click on the project->New->Application  Configuration File-> Save as App C
 A class file is responsible to  store all the locators belong to that page
 //Document request-All the objects of the document request will be saved in this class file
 We have to create a new folder for Page Object
-Page Factory is necessary in the class file
  //driver.FindElement(By.Id("username"))-Web Element
  //By.Id("username")-Locator
 Page Object Pattern 
+Page Factory is necessary in the class file
 Add Manage NuGet Packages->Browser->Selenium Extras PageObjects,Selenium Extras PageObjects.Core
+//driver.FindElement(By.Id("username")) can be written as [FindsBy(How = How.Id, Using = "username")]
+//private IWebElement username; can be assigned to a variable
+        private IWebDriver driver;
 
+        public LoginPage(IWebDriver driver)
+        {
+
+            this.driver = driver;
+            PageFactory.InitElements(driver, this);//This helps to register the driver
+//InitElement methods helps for locators
+
+        }
+We should declare object as private it avoid reinitialisation 
+ [FindsBy(How = How.Id, Using = "username")]
+ private IWebElement username;
+We should call using methods 
+  public IWebElement getUserName()
+
+  {
+      return username;
+  }
+This is concept of encapsulation.
