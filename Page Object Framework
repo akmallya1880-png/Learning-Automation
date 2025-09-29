@@ -6,3 +6,15 @@ Right click on the project->New->Application  Configuration File-> Save as App C
         <add key="browser" value="Chrome"/>// this should be added
     </appSettings>
 </configuration>
+
+2)Page Object 
+//Login page- All the objects of the login page will be saved in this class file
+A class file is responsible to  store all the locators belong to that page
+//Document request-All the objects of the document request will be saved in this class file
+We have to create a new folder for Page Object
+Page Factory is necessary in the class file
+ //driver.FindElement(By.Id("username"))-Web Element
+ //By.Id("username")-Locator
+Page Object Pattern 
+Add Manage NuGet Packages->Browser->Selenium Extras PageObjects,Selenium Extras PageObjects.Core
+
