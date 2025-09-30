@@ -6,7 +6,7 @@ Right click on the project->New->Application  Configuration File-> Save as App C
         <add key="browser" value="Chrome"/>// this should be added
     </appSettings>
 </configuration>
-
+##################################################################################################################
 2)Page Object 
 //Login page- All the objects of the login page will be saved in this class file
 A class file is responsible to  store all the locators belong to that page
@@ -39,3 +39,26 @@ We should call using methods
       return username;
   }
 This is concept of encapsulation.
+##################################################################################################################
+Nunit Annotations/Attributes:
+3) Global Data Declaration:We should declare as [TestCase("username" "password")]
+Then declare in the method of the [Test] with arguments of datatypes
+Each testcase will run separately when we declare twice
+ [TestCase("username" "password")]-This will run first 
+ [TestCase("username" "password")]-This will run second
+
+4)To wrap 20+ testcases we should create a method and then call it using TestCaseSource
+TestCaseSource("AddTestDataConfig")- TestCaseSource accepts method name as annotations
+    public static IEnumerable<TestCaseData> AddTestDataConfig()
+
+    {
+yield return new TestCaseData("username","password");
+yield return new TestCaseData("username","password");
+yield return new TestCaseData("username","password");
+
+      }
+
+yield is used in before multiple return so that it will wait
+Since there is multiple return we should IEumerable<TestCaseData>
+5)Json files are used to fetch datas in the automation
+To create a json file->Add->TextFile
