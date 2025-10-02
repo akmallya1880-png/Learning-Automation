@@ -82,5 +82,16 @@ public string[] extractDataArray(String tokenName)
   List<String> productsList=   jsonObject.SelectTokens(tokenName).Values<string>().ToList();
     return productsList.ToArray();
 }
+##########################################################
+Parallelizable to run we should use the concept of ThreadSafe
+Thread Local makes a driver safe to run and makes to run in separate thread
+Thread local class maintains locally 
+It is declared as public ThreadLocal<IWebDriver> driver= new ThreadLocal<IWebDriver>();
+we should access "Value" should be given for making it threadsafe .See the example
+driver.Value.Manage().Timeouts.ImplicitWait= TimeSpan.FromSeconds(5);
+#######################################
+To run datasets(different types of data) use-[Parallelizable(ParallelScope.All)]
+To run Class use--[Parallelizable(ParallelScope.Children)]
+To run multiple class use-[Parallelizable(ParallelScope.Self)]
 
 
