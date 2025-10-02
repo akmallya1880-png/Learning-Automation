@@ -93,5 +93,19 @@ driver.Value.Manage().Timeouts.ImplicitWait= TimeSpan.FromSeconds(5);
 To run datasets(different types of data) use-[Parallelizable(ParallelScope.All)]
 To run Class use--[Parallelizable(ParallelScope.Children)]
 To run multiple class in the same folder use-[Parallelizable(ParallelScope.Self)]
+#################################################################
+Category "Smoke", Category "Regression"
+View->Terminal
+To run in command -cd CSharpSelFramework - To run all tests
+dotnet test CSharpSelFramework.csproj --filter TestCategory=Smoke - To run by category
+In the program put this
+string browserName;
+browserName=TestContext.Parameters["browserName"];
+if(browserName==null)
+{
+browserName=ConfigurationManager.AppSettings["browser"];
+}
+dotnet test CSharpSelFramework.csproj --filter TestCategory=Smoke --TestRunParameters.Parameter\(name=\"browserName\",Value=\"Chrome\"\)
+
 
 
