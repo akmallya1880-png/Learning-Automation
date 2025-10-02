@@ -92,6 +92,6 @@ driver.Value.Manage().Timeouts.ImplicitWait= TimeSpan.FromSeconds(5);
 #######################################
 To run datasets(different types of data) use-[Parallelizable(ParallelScope.All)]
 To run Class use--[Parallelizable(ParallelScope.Children)]
-To run multiple class use-[Parallelizable(ParallelScope.Self)]
+To run multiple class in the same folder use-[Parallelizable(ParallelScope.Self)]
 
 
