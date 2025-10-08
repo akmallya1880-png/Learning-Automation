@@ -151,6 +151,7 @@ catch (NoSuchElementException ex)
 }
 ###########################################################################
 16. What is XPath and its types?
+“XPath is used to locate elements in the DOM; types include absolute XPath (full path) and relative XPath (dynamic, preferred).”
 
 Absolute XPath: /html/body/div[1]/a
 
@@ -158,6 +159,7 @@ Relative XPath: //a[@id='link']
 ###########################################################################
 
 17. What are Axes-based XPaths?
+“Axes-based XPath navigates the DOM relative to an element
 
 following-sibling
 
@@ -182,6 +184,7 @@ Child/Descendant → Move downward
 ###########################################################################
 
 18. How do you handle Web Tables?
+“I handle web tables by iterating through rows and cells using dynamic XPath or reusable utility methods to extract or validate data.”
 var rows = driver.FindElements(By.XPath("//table/tbody/tr"));
 foreach (var row in rows)
 {
@@ -193,6 +196,7 @@ foreach (var row in rows)
 }
 ###########################################################################
 19. What is Serialization and Deserialization?
+“Serialization converts a C# object into JSON/XML for storage or transfer, and deserialization converts it back into an object.”
 
 Serialization: Converting an object into a byte stream.
 
