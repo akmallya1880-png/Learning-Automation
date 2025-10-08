@@ -78,6 +78,7 @@ foreach (var win in allWindows)
 driver.SwitchTo().Window(parent);|
 #########################################################################################
 8. How do you handle Authentication popup (username & password)?
+In real projects, I’ve noticed that authentication popups can vary across test environments — so I usually discuss with the dev/infra team whether we can switch to token-based or cookie-based login in automation to make the scripts more stable.”
 driver.Navigate().GoToUrl("https://username:password@yourURL.com");
 ###########################################################################
 9. Screenshot syntax
