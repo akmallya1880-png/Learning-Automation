@@ -97,6 +97,7 @@ In my project:
 “I also attach these screenshots automatically to my test reports so that any test failure instantly shows the browser state at the point of error.”
 ###########################################################################
 10. If click is not working, what’s the next option?
+In my automation framework, I usually create a custom click utility method that first tries a normal click, and if it fails, automatically retries with a JavaScript click. This makes the scripts more stable and reduces flaky test failures.”
 IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
 js.ExecuteScript("arguments[0].click();", element);
 ###########################################################################
