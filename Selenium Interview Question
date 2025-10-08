@@ -49,7 +49,7 @@ FindElement() → IWebElement
 FindElements() → IReadOnlyCollection<IWebElement>
 #########################################################################################
 6. How will you handle Alert and its types with syntax?
-
+“In Selenium C#, I handle alerts using driver.SwitchTo().Alert(). Depending on the alert type, I use Accept() for OK, Dismiss() for Cancel, and SendKeys() for entering text. I also use WebDriverWait to handle synchronization issues when the alert takes time to appear.”
 Syntax:
 IAlert alert = driver.SwitchTo().Alert();
 alert.Accept();
