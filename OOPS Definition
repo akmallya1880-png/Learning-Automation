@@ -50,3 +50,7 @@ Contains() → Check if string contains text
 Replace() → Replace text
 
 Split() → Split string into array
+
+var – "A variable where C# automatically figures out the type for you."
+
+int – "A variable used to store whole numbers, like counters or loop indexes."
