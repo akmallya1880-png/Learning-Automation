@@ -57,9 +57,9 @@ alert.Dismiss();
 string text = alert.Text;
 alert.SendKeys("Text");
 Types:
-Simple Alert
-Confirmation Alert
-Prompt Alert
+Simple Alert – shows a message and has an OK button.
+Confirmation Alert – shows a message with OK and Cancel buttons.
+Prompt Alert – accepts text input along with OK and Cancel button
 #########################################################################################
 7. How will you handle multiple windows?
 string parent = driver.CurrentWindowHandle;
