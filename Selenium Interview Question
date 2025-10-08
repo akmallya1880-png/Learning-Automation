@@ -108,6 +108,8 @@ Actions actions = new Actions(driver);
 actions.MoveToElement(element).Click().Perform();
 ###########################################################################
 12. How do you scroll down?
+“I’ve created a ScrollToElement() and ScrollByPixel() utility method using JavaScriptExecutor, so testers can easily reuse them.
+This makes scripts cleaner and more stable, especially when elements are not immediately visible in the viewport.”
 IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
 js.ExecuteScript("window.scrollBy(0,500);");
 ###########################################################################
