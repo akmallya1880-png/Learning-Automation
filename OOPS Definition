@@ -25,3 +25,28 @@
 7) Constructors
 
 "Constructors are special methods called when an object is created. I use default, parameterized, static, and private constructors in my automation framework. For example, parameterized constructors initialize page objects with WebDriver instances, and static constructors set up global configurations once per framework run."
+8)String
+a string is a sequence of characters used to store text data. It is immutable, so any modification creates a new instance. Strings are essential in automation because we use them to store element locators, test data, and validation messages.
+
+For example, I might store an XPath as a string:
+
+string loginButton = "//button[@id='login']";
+
+
+Then use it in Selenium:
+
+driver.FindElement(By.XPath(loginButton)).Click();
+
+
+I also use string methods like Contains(), Substring(), Replace(), and Split() to validate element texts or process dynamic data. For instance, verifying that the text displayed on a web page matches the expected string during assertions."*
+Common String Operations:
+
+Length → Get number of characters
+
+Substring() → Extract part of string
+
+Contains() → Check if string contains text
+
+Replace() → Replace text
+
+Split() → Split string into array
