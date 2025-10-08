@@ -102,6 +102,8 @@ IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
 js.ExecuteScript("arguments[0].click();", element);
 ###########################################################################
 11. If JavaScript Executor is not working, what's the next option?
+In my framework, I always design actions like click, enter text, or scroll inside a robust utility layer that tries multiple approaches — normal click → JS click → Actions → keyboard simulation.
+This ensures test stability and reduces flaky failures across environments.”
 Actions actions = new Actions(driver);
 actions.MoveToElement(element).Click().Perform();
 ###########################################################################
