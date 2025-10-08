@@ -82,9 +82,19 @@ In real projects, I’ve noticed that authentication popups can vary across test
 driver.Navigate().GoToUrl("https://username:password@yourURL.com");
 ###########################################################################
 9. Screenshot syntax
+“In my framework, I often capture screenshots for debugging and reporting — especially when a test case fails.
+Selenium provides the ITakesScreenshot interface to capture screenshots.”
+Syntax:
 ITakesScreenshot ts = (ITakesScreenshot)driver;
 Screenshot screenshot = ts.GetScreenshot();
-screenshot.SaveAsFile("path/to/save.png", ScreenshotImageFormat.Png);
+screenshot.SaveAsFile("C:\\Screenshots\\Error.png", ScreenshotImageFormat.Png);
+Explanation:
+ITakesScreenshot is an interface implemented by WebDriver.
+GetScreenshot() captures the current browser window.
+SaveAsFile() saves the image to a specified location.
+In my project:
+“I’ve implemented this inside a reusable utility method that dynamically names the screenshot with the test name and timestamp, and integrates with NUnit’s TearDown or Extent Reports for better traceability.”
+“I also attach these screenshots automatically to my test reports so that any test failure instantly shows the browser state at the point of error.”
 ###########################################################################
 10. If click is not working, what’s the next option?
 IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
