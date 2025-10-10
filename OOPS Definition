@@ -2,54 +2,34 @@
 Collections in C# are used to store and manage groups of related data. For example, I use List<T> to store multiple element texts from a web table, and Dictionary<TKey,TValue> to map key-value pairs like username-password combinations. They make data handling efficient in automation scripts."
 ###########################################################
 2) Interface
-
-"An interface is a contract that defines methods a class must implement but does not provide the implementation. For example, I have an IPageActions interface with Click() and EnterText() methods. All page classes implement this interface to ensure consistency across the framework."
-
+An interface is a contract that defines methods a class must implement but does not provide the implementation. For example, I have an IPageActions interface with Click() and EnterText() methods. All page classes implement this interface to ensure consistency across the framework."
+###########################################################
 3) Abstraction
-
-"Abstraction hides implementation details and exposes only the essential functionalities. In automation, I use abstract classes like BasePage to define common methods such as WaitForElement() or ClickElement(), which are shared by all page objects without duplicating code."
-
+Abstraction hides implementation details and exposes only the essential functionalities. In automation, I use abstract classes like BasePage to define common methods such as WaitForElement() or ClickElement(), which are shared by all page objects without duplicating code."
+###########################################################
 4) Polymorphism
-
-"Polymorphism allows methods to take multiple forms. In compile-time polymorphism, I overload methods like Click(By locator) and Click(IWebElement element). In runtime polymorphism, I override base class methods to change behavior depending on the object. This helps in making utilities flexible and reusable."
-
+Polymorphism allows methods to take multiple forms. In compile-time polymorphism, I overload methods like Click(By locator) and Click(IWebElement element). In runtime polymorphism, I override base class methods to change behavior depending on the object. This helps in making utilities flexible and reusable."
+###########################################################
 5) Inheritance
-
-"Inheritance allows one class to reuse the members of another, reducing code duplication. In automation, I have a BasePage class with common methods, and all page objects inherit from it. I also use multilevel inheritance in utility frameworks to extend functionality efficiently."
-
+Inheritance allows one class to reuse the members of another, reducing code duplication. In automation, I have a BasePage class with common methods, and all page objects inherit from it. I also use multilevel inheritance in utility frameworks to extend functionality efficiently."
+###########################################################
 6) Encapsulation
-
-"Encapsulation hides the internal details of a class and exposes only necessary methods or properties. For example, I encapsulate WebDriver inside a DriverManager class so that tests cannot directly modify it, which ensures safe and maintainable framework design."
-
+Encapsulation hides the internal details of a class and exposes only necessary methods or properties. For example, I encapsulate WebDriver inside a DriverManager class so that tests cannot directly modify it, which ensures safe and maintainable framework design."
+###########################################################
 7) Constructors
-
-"Constructors are special methods called when an object is created. I use default, parameterized, static, and private constructors in my automation framework. For example, parameterized constructors initialize page objects with WebDriver instances, and static constructors set up global configurations once per framework run."
+Constructors are special methods called when an object is created. I use default, parameterized, static, and private constructors in my automation framework. For example, parameterized constructors initialize page objects with WebDriver instances, and static constructors set up global configurations once per framework run."
+###########################################################
 8)String
-a string is a sequence of characters used to store text data. It is immutable, so any modification creates a new instance. Strings are essential in automation because we use them to store element locators, test data, and validation messages.
-
-For example, I might store an XPath as a string:
-
-string loginButton = "//button[@id='login']";
-
-
-Then use it in Selenium:
-
-driver.FindElement(By.XPath(loginButton)).Click();
-
-
-I also use string methods like Contains(), Substring(), Replace(), and Split() to validate element texts or process dynamic data. For instance, verifying that the text displayed on a web page matches the expected string during assertions."*
-Common String Operations:
-
-Length → Get number of characters
-
-Substring() → Extract part of string
-
-Contains() → Check if string contains text
-
-Replace() → Replace text
-
-Split() → Split string into array
-
+A string is a sequence of characters used to store text like names, messages, or locators.
+It is immutable, meaning once created, it cannot be changed — any modification creates a new string.
+In automation, we use strings to store XPath, test data, and validation messages.
+Common String Methods:
+Length → gives number of characters
+Substring() → gets part of a string
+Contains() → checks if text is present
+Replace() → changes text
+Split() → breaks string into pieces
+#################################################
 var – "A variable where C# automatically figures out the type for you."
 
 int – "A variable used to store whole numbers, like counters or loop indexes."
