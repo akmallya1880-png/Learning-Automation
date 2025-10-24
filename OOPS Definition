@@ -2,7 +2,7 @@
 Collections in C# are used to store and manage groups of related data. For example, I use List<T> to store multiple element texts from a web table, and Dictionary<TKey,TValue> to map key-value pairs like username-password combinations. They make data handling efficient in automation scripts."
 ###########################################################
 2) Interface
-An interface is a contract that defines methods a class must implement but does not provide the implementation. For example, I have an IPageActions interface with Click() and EnterText() methods. All page classes implement this interface to ensure consistency across the framework."
+An interface is a contract that defines a set of methods and properties that a class must implement, but it does not provide their implementation. For example, I have an IPageActions interface with Click() and EnterText() methods. All page classes implement this interface to ensure consistency across the framework."
 ###########################################################
 3) Abstraction
 Abstraction hides implementation details and exposes only the essential functionalities. In automation, I use abstract classes like BasePage to define common methods such as WaitForElement() or ClickElement(), which are shared by all page objects without duplicating code."
