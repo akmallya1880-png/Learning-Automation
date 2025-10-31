@@ -44,8 +44,9 @@ Exit frame:
 driver.SwitchTo().DefaultContent();
 #########################################################################################
 5. What is the return type of WebElement and WebElements?
-
+When you use a locator method like FindElement, it returns a single web element — the first matching element on the page.
 FindElement() → IWebElement
+When you use FindElements, it returns a list (collection) of web elements that match the locator.
 FindElements() → IReadOnlyCollection<IWebElement>
 #########################################################################################
 6. How will you handle Alert and its types with syntax?
