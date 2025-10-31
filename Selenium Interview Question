@@ -29,6 +29,8 @@ IWebElement element = wait.Until(
 
 #########################################################################################
 3.How will you handle dropdowns
+“In Selenium C#, I use the SelectElement class to handle dropdowns.
+First, I locate the dropdown element, then create an object of SelectElement, and finally select options using methods like SelectByText, SelectByValue, or SelectByIndex.”
 using OpenQA.Selenium.Support.UI;
 
 SelectElement dropdown = new SelectElement(driver.FindElement(By.Id("dropdownId")));
