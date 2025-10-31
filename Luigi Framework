@@ -1,3 +1,4 @@
+“In our automation framework, we follow a layered architecture to keep the code clean, reusable, and easy to maintain. The main layers are the Base Class, Page Object Layer, and Test Layer.”
 1. Base Class (Foundation Layer)
 
 This class contains common setup and teardown methods used across all tests.
