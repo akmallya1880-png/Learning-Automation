@@ -37,7 +37,7 @@ dropdown.SelectByValue("value");
 dropdown.SelectByIndex(2);
 #########################################################################################
 4.How will you handle frames and come out of the frame?
-
+“In Selenium, to handle elements inside an iframe, we must first switch to that frame using driver.SwitchTo().Frame(). After completing actions, we can come out using ParentFrame() or DefaultContent().”
 Switch into frame:
 driver.SwitchTo().Frame("frameName");
 Exit frame:
