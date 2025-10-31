@@ -18,7 +18,7 @@ Utility integrations (screenshots, reports).
 Why we use it: Avoids duplication since every test needs a browser setup and cleanup.
 
 2. Page Object Methods (Page Object Model – POM Layer)
-
+In the Page Object Model, each page of the application is represented as a separate class.
 Each webpage / module in the application is represented as a class.
 
 Inside that class, we store:
