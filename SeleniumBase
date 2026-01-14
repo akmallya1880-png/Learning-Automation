@@ -230,7 +230,52 @@ namespace AutomationLearingNov.Selenium
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
             js.ExecuteScript("arguments[0].click();", FindElement(locator));
         }
-        public void ScrollToBottom
+        public void ScrollToBottom()
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("window.scrollTo(0,document.body.scrollHeight);");
+        }
+        public void ScrollToElement(By locator)
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("arguments[0].scrollIntoView(true));", FindElement(locator));
+        }
+        public void JsSendKeys(By locator, string value)
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("arguments[0].value='"+value+"';",FindElement(locator));
+
+        }
+        /// === frames====
+        public void SwitchToDefaultContent()
+        {
+            driver.SwitchTo().DefaultContent();
+        }
+        public void SwitchToFrameByIndex(int index)
+        {
+            driver.SwitchTo().Frame(index);
+        }
+        public void SwitchToFrameByNameOrId(string nameOrId)
+        {
+            driver.SwitchTo().Frame(nameOrId);
+        }
+        public void SwitchToFrameByElement(By locator)
+        {
+            driver.SwitchTo().Frame(FindElement(locator));
+        }
+        public void SwitchToParentFrame()
+        {
+            driver.SwitchTo().ParentFrame();
+        }
+        /// === windows handling==
+        public void SwitchToWindow(string windowTitle)
+        {
+            foreach (string window in driver.WindowHandles)
+            {
+
+            }
+        }
+
         //Deselect from dropdown
         //Only for multi select dropdown
         //ismultiple should be true
@@ -251,7 +296,7 @@ namespace AutomationLearingNov.Selenium
         //default frame, frame by index, frame by name or id, frame by webelement
         //parent frame, main frame,nested frame
 
-        /// === windows handling==
+
         /// ===screenshots===
     }
 }
