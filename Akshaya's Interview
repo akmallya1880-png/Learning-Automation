@@ -70,12 +70,97 @@ public class LoginPage
         driver.FindElement(loginBtn).Click();
     }
 }
-********************************************************************************8
+********************************************************************************
 What is Functional testing Pyramind?
+        UI Tests (Few, Slow)
+     -------------------------
+       API / Service Tests
+     -------------------------
+        Unit Tests (Many, Fast)
+********************************************************************************
 What is Regression testing suite?
+Regression testing = checking that old functionality didn’t break after changes
+Regression Suite contains:
+Critical business flows
+High-risk areas
+Previously failed test cases
+Smoke + sanity + core workflows
+********************************************************************************
 What is Integration testing?
+Integration testing checks:
+Interaction between modules/services
+Example:
+UI → API → DB
+Payment service → Order service
+Login API → User profile API
+********************************************************************************
 What is Agile Methodolgy?
+Agile is incremental delivery + fast feedback.
+Key components:
+Sprint (2 weeks)
+User stories
+Backlog grooming
+Daily standup
+Sprint review & retrospective
+********************************************************************************
 Scenario based for API testing for login  and also in automation testing program?
+API: POST /login
+Positive scenario
+Valid username & password
+Status code: 200
+Token returned
+Negative scenarios
+Invalid password → 401
+Missing username → 400
+SQL injection → 401
+Locked user → 403
+Program
+var client = new RestClient("https://example.com/login");
+var request = new RestRequest(Method.POST);
+
+request.AddJsonBody(new {
+    username = "admin",
+    password = "admin123"
+});
+
+IRestResponse response = client.Execute(request);
+Assert.AreEqual(200, (int)response.StatusCode);
+********************************************************************************
 How do you debug in failed testcases?
+Real debugging steps:
+Read error message, not logs blindly
+Identify: App issue or automation issue?
+Re-run locally
+Add logs/screenshots
+Debug step-by-step
+Check waits, locators, test data
+********************************************************************************
 Write a Select program for employees with salary 50,000 and duplicate names?
+SELECT name, salary
+FROM employees
+WHERE salary > 50000
+AND name IN (
+    SELECT name
+    FROM employees
+    GROUP BY name
+    HAVING COUNT(name) > 1
+);
+********************************************************************************
 What are joins in SQL and explain them? 
+INNER JOIN
+Returns matching records
+SELECT *
+FROM emp e
+INNER JOIN dept d ON e.dept_id = d.id;
+LEFT JOIN
+All from left + matching from right
+SELECT *
+FROM emp e
+LEFT JOIN dept d ON e.dept_id = d.id;
+RIGHT JOIN
+All from right + matching from left
+FULL JOIN
+Everything from both tables
+SELF JOIN
+Table joined with itself
+********************************************************************************
