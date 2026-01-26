@@ -269,6 +269,9 @@ class Program
 What is Async and Await?
 Async and await enable non-blocking asynchronous execution by allowing a method to pause without blocking the thread while waiting for I/O operations to complete.
 Async = background runner, Await = polite pause
+**********************************************************************
+How do you handle Window Handle?
+In Selenium, a window handle is a unique identifier for each browser window or tab, used by WebDriver to switch control between them
 ***********************************************************************
 ///====Novaic Digitals====///
 Test Strategy = The “Game Plan”
