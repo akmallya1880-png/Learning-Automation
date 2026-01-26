@@ -166,3 +166,106 @@ Table joined with itself
 ********************************************************************************
 
 https://rahulshettyacademy.com/AutomationPractice/?utm_source=chatgpt.com
+**********************************************************************************
+///=====servion global solutions pvt ltd====///
+Explain POM
+In our automation framework, we follow a layered architecture mainly to separate responsibilities and reduce maintenance cost.
+The Base layer handles all cross-cutting concerns like WebDriver lifecycle, configuration, and reporting.
+The Page Object layer encapsulates UI structure and behavior — locators and actions stay there so UI changes don’t break tests.
+The Test layer focuses only on business scenarios and assertions.
+This structure allows us to scale tests, switch browsers, and absorb UI changes with minimal impact.
+******************************************************************************
+What was the framework?
+NUnit integrates well with C#, supports annotations, parallel execution, and is lightweight, which makes it suitable for scalable automation frameworks.
+*****************************************************
+How do you run regression and Parallelization?
+We run regression by grouping test cases using NUnit Categories and executing them via test filters either from Visual Studio or through CI.
+***************************************************************
+Injecting Data  using Excel?
+We inject JSON data through helper classes and pass values to tests. NUnit also supports parameterized tests using [TestCase], but for complex data we prefer JSON.
+***************************************************************
+What Challenges have you faced in the framework?
+Flakiness, parallel issues, and data handling were the main challenges. We fixed them using centralized waits, ThreadLocal WebDriver, JSON test data, and Page Object Model.
+**********************************************************************
+What are OOPS concept used in the framework
+E – Encapsulation → Page Objects
+I – Inheritance → BaseTest
+A – Abstraction → Interfaces / Helpers
+P – Polymorphism → Multi-browser support
+Encapsulation is used in Page Objects, inheritance in BaseTest classes, abstraction via interfaces and helper layers, and polymorphism for multi-browser execution.
+**********************************************************************
+StaleElement Exception
+StaleElementException happens when the DOM refreshes and the element reference becomes invalid. We fixed it using explicit waits, re-locating elements, and avoiding cached WebElements in Page Objects.
+*********************************************************************************
+API Scenarios-200,201,Validate,Headers,Json import
+In manual API testing, I validate status codes like 200 and 201, check response body and headers, and use JSON payloads in Postman to test different scenarios.
+In Postman:
+Choose request type → POST or PUT
+Go to Body
+Select raw
+Choose JSON
+Paste the JSON payload
+That’s it. You are sending data to the API.
+A JSON payload is just data you send to an API.
+Think of it like filling a form and clicking Submit.
+The filled form = JSON payload.
+**********************************************************************
+Explain this IWebdriver driver= new ChromeDriver();?
+driver.Navigate().GoToUrl();
+We use the WebDriver interface instead of ChromeDriver directly to support multiple browsers like Chrome, Edge, or Firefox.
+**********************************************************************
+"I love Csharp programming"
+reverse the full sentence and  reverse the word "programming" again
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string sentence = "I love Csharp programming";
+
+        // Step 1: Reverse the full sentence word by word
+        string[] words = sentence.Split(' ');
+        Array.Reverse(words);
+
+        // Step 2: Reverse only the word "programming" back to original
+        for (int i = 0; i < words.Length; i++)
+        {
+            if (words[i] == "programming")
+            {
+                char[] charArray = words[i].ToCharArray();
+                Array.Reverse(charArray);
+                words[i] = new string(charArray);
+            }
+        }
+
+        // Join the words back into a sentence
+        string result = string.Join(" ", words);
+        Console.WriteLine(result);
+    }
+}
+**********************************************************************
+int[] numbers = { 10, 20, 30, 20, 40 } using Hashset
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        int[] numbers = { 10, 20, 30, 20, 40 };
+
+        // HashSet automatically removes duplicates
+        HashSet<int> uniqueNumbers = new HashSet<int>(numbers);
+
+        Console.WriteLine("Array after removing duplicates:");
+        foreach (int num in uniqueNumbers)
+        {
+            Console.WriteLine(num);
+        }
+    }
+}
+**********************************************************************
+What is Async and Await?
+Async and await enable non-blocking asynchronous execution by allowing a method to pause without blocking the thread while waiting for I/O operations to complete.
+
