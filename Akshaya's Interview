@@ -268,4 +268,30 @@ class Program
 **********************************************************************
 What is Async and Await?
 Async and await enable non-blocking asynchronous execution by allowing a method to pause without blocking the thread while waiting for I/O operations to complete.
+Async = background runner, Await = polite pause
+***********************************************************************
+///====Novaic Digitals====///
+Test Strategy = The “Game Plan”
+
+What it is: Big-picture approach to testing.
+
+Think: How will we win the quality game?
+
+Focus: Approach, tools, risks, types of testing.
+
+Example phrase to remember:
+
+“Strategy = How we play.”
+
+Test Plan = The “Playbook”
+
+What it is: Step-by-step plan for this project/release.
+
+Think: What exactly will we do, when, and who does it?
+
+Focus: Scope, schedule, resources, test cases, entry/exit.
+
+Example phrase to remember:
+
+“Plan = What we actually do.”
 
