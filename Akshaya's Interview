@@ -286,4 +286,65 @@ Think: What exactly will we do, when, and who does it?
 Focus: Scope, schedule, resources, test cases, entry/exit.
 Example phrase to remember:
 “Plan = What we actually do.”
-
+***********************************************************************
+///====Hexaware Technologies====///
+Remove duplicate and arrange in descending order
+using System;
+using System.Collections.Generic;
+class RemoveDuplicateAndDescending
+{
+    public static void Main()
+    {
+        int[]a={10,40,50,40,70,67,90,20};
+        List<int>uniques = new List<int>();
+        foreach(var unique in a)
+        {
+            if(!uniques.Contains(unique))
+            {
+                uniques.Add(unique);
+            }
+        }
+        foreach(var item in uniques)
+        {
+            Console.Write(","+ item);
+        }
+        int temp;
+        int[] uniarr= uniques.ToArray();
+        for(int i=0;i<uniarr.Length;i++)
+        {
+            for(int j=i+1;j<uniarr.Length;j++)
+            {
+                if(uniarr[i]<uniarr[j])
+                {
+                    temp=uniarr[i];
+                    uniarr[i]=uniarr[j];
+                    uniarr[j]=temp;
+                }
+            }
+        }
+        foreach(var num in uniarr)
+        {
+            Console.WriteLine(num);
+        }
+        
+    }
+}
+***********************************************************************
+Difference between IWebdriver and IWebElement
+IWebDriver
+Used to control the browser
+Handles navigation, window, tab, alert actions
+IWebElement
+Used to control a web page element
+Used for click, send keys, get text, etc.
+***********************************************************************
+What is GetWindowHandle()?
+Returns unique ID of the current browser window
+Type: string
+Used when multiple windows / tabs are opened
+Selenium identifies windows using handles (IDs), not names.
+***********************************************************************
+How to store GetWindowHandle()?
+Store current (parent) window
+string parentWindow = driver.CurrentWindowHandle;
+***********************************************************************
