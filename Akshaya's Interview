@@ -272,6 +272,9 @@ Async = background runner, Await = polite pause
 **********************************************************************
 How do you handle Window Handle?
 In Selenium, a window handle is a unique identifier for each browser window or tab, used by WebDriver to switch control between them
+**********************************************************************
+Xpath: For Makemy trip every second sunday
+//div[@class='DayPicker-Body']/div[2]/div[1]
 ***********************************************************************
 ///====Novaic Digitals====///
 Test Strategy = The “Game Plan”
