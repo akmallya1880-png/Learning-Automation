@@ -1,0 +1,248 @@
+1) Functionality not fully developed — what will you do?
+I will not block automation.
+Approach:
+Talk to developer/product owner to understand expected behavior
+Create:
+Test cases
+Automation skeleton (empty methods)
+
+Use mock data or stubs if available
+
+Automate once UI is stable
+
+Interview line:
+
+I prepare test scenarios early and automate once functionality stabilizes to avoid rework.
+
+✅ 2) If a test fails — next step?
+
+Step by step:
+
+Check failure screenshot/logs
+
+Verify:
+
+Locator changed?
+
+Page load issue?
+
+Data issue?
+
+Re-run locally
+
+Report bug if it’s an application issue
+
+Golden rule:
+❌ Don’t immediately fix script — first find root cause.
+
+✅ 3) Minor application changes — how modify scripts?
+
+✔ Use Page Object Model (POM)
+
+So only:
+
+Update locator in Page class
+
+Not in 100 test cases
+
+Example:
+If button ID changes → update once in Page file.
+
+Interview line:
+
+With POM and reusable methods, maintenance is quick and minimal.
+
+✅ 4) Automating Login functionality
+
+Typical steps:
+
+✔ Locate username
+✔ Locate password
+✔ Click login
+✔ Validate dashboard/home page
+
+Extra good practices:
+
+Use explicit wait
+
+Use config file for credentials
+
+Assert successful login
+
+✅ 5) Verify email after registration
+
+Best approaches:
+
+Option 1 (Best):
+
+Use test email inbox API like:
+
+Mailinator
+
+Gmail API
+
+Steps:
+
+Register user
+
+Open test inbox
+
+Read latest mail
+
+Validate subject/link/content
+
+Interview tip:
+
+We should avoid real email systems and use test email services.
+
+✅ 6) Long execution scenario — manual or automation?
+
+✔ Always Automation (if repetitive)
+
+Because:
+
+Saves time long term
+
+Can run overnight (CI/CD)
+
+Manual only if:
+
+One-time test
+
+UI constantly changing
+
+✅ 7) Validate downloaded file content
+
+Steps:
+
+Click download button
+
+Go to download folder
+
+Verify:
+
+File exists
+
+File name
+
+Open and validate content (Excel, PDF, CSV)
+
+Example tools:
+
+Java/C# File IO
+
+Apache POI (Excel)
+
+✅ 8) Verify color, font, position
+
+Use CSS property validation:
+
+Example:
+
+Get element color
+
+Get font-family
+
+Get location (x,y)
+
+Things to check:
+
+element.getCssValue("color")
+
+element.getCssValue("font-family")
+
+element.getLocation()
+
+✅ 9) Handle pop-ups & alerts
+For browser alerts:
+driver.switchTo().alert().accept();
+
+
+or
+
+dismiss()
+
+For windows:
+
+Get window handles
+
+Switch to child window
+
+Perform action
+
+Switch back
+
+✅ 10) Scroll till footer visible
+
+Use JavaScriptExecutor:
+
+js.executeScript("arguments[0].scrollIntoView(true);", footerElement);
+
+
+Or:
+
+window.scrollTo(0, document.body.scrollHeight)
+
+
+Then verify footer displayed.
+
+✅ 11) Automating legacy application
+
+My approach:
+
+✔ First check automation feasibility
+✔ Identify stable elements
+✔ Start with smoke scenarios
+✔ Slowly increase coverage
+
+If UI is unstable:
+
+Use API testing where possible
+
+Interview line:
+
+I prioritize critical flows first and use hybrid automation where needed.
+
+✅ 12) Script worked yesterday, fails today — troubleshoot
+
+Checklist:
+
+✅ App change?
+✅ Locator change?
+✅ Environment down?
+✅ Test data expired?
+✅ Sync issue (wait problem)?
+
+Debug using:
+
+Logs
+
+Screenshots
+
+Rerun locally
+
+✅ 13) Automation running slow — how improve?
+
+✔ Reduce unnecessary waits
+✔ Use explicit wait not Thread.sleep
+✔ Run tests in parallel
+✔ Optimize browser setup
+✔ Avoid redundant logins
+
+Bonus: Use headless execution.
+
+✅ 14) Script failing due to app change — what to do?
+
+Identify what changed
+
+Update locators in POM
+
+Revalidate flow
+
+Add better waits
+
+Inform team about breaking change
+
+Best practice:
+
+Maintain automation like production code.
