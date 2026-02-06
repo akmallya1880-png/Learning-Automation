@@ -351,3 +351,73 @@ How to store GetWindowHandle()?
 Store current (parent) window
 string parentWindow = driver.CurrentWindowHandle;
 ***********************************************************************
+///====Alcon====///
+1. Overriding in Page3 and calling parent Page1 using base.Setup()
+In C#, when a method is marked virtual in the parent and override in the child, I can invoke the parent implementation using base.MethodName().
+class Page1
+{
+    public virtual void Setup()
+    {
+        Console.WriteLine("Page1 setup");
+    }
+}
+
+class Page3 : Page1
+{
+    public override void Setup()
+    {
+        base.Setup();   // Calls Page1 Setup
+        Console.WriteLine("Page3 setup");
+    }
+}
+***********************************************************************
+2.Write a method that takes two integers and returns both sum and product.
+public (int sum, int product) Calculate(int a, int b)
+{
+    return (a + b, a * b);
+}
+var result = Calculate(2, 3);
+Console.WriteLine(result.sum);      // 5
+Console.WriteLine(result.product);  // 6
+***********************************************************************
+3.How do you capture screenshots in Selenium C#?
+Selenium provides ITakesScreenshot interface
+Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
+ss.SaveAsFile("error.png", ScreenshotImageFormat.Png);
+***********************************************************************
+4.When normal Selenium scrolling fails, what do you use?
+IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+js.ExecuteScript("window.scrollBy(0,500)");
+Scroll to element:
+js.ExecuteScript("arguments[0].scrollIntoView(true);", element);
+***********************************************************************
+5.How do you run tests in parallel?
+[assembly: Parallelizable(ParallelScope.All)]
+[assembly: LevelOfParallelism(3)]
+NUnit is allowed to run ALL tests at the same time — across classes and methods
+[LevelOfParallelism(3)]
+Maximum number of threads at once
+***********************************************************************
+6.How do you handle alerts?
+IAlert alert = driver.SwitchTo().Alert();
+alert.Accept();
+alert.Dismiss();
+string text = alert.Text;
+***********************************************************************
+7.abc3k3lou6 -Extract digits and return sum.
+Logic1
+string input = "abc3k3lou6";
+int sum = input.Where(char.IsDigit)
+               .Select(c => c - '0')
+               .Sum();
+
+Console.WriteLine(sum); // 12
+Logic2
+int sum = 0;
+foreach(char c in input)
+{
+    if(char.IsDigit(c))
+        sum += int.Parse(c.ToString());
+}
+***********************************************************************
+
