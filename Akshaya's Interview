@@ -494,4 +494,11 @@ If only 6.0 is to be released, I branch from release/6.0, apply the fix, merge i
 8.How do handle conflict in code?
 When conflicts occur across parallel releases, I analyze business intent before resolving, manually merge correct logic, validate through tests, and then commit the clean version.
 ***********************************************************************
-
+9.Advantage Of POM
+Better Maintainability
+Code Reusability
+Improved Readability
+Faster Debugging
+Better Scalability
+Supports Agile & CI/CD
+POM improves maintainability, reusability, readability, and scalability by separating UI elements from test logic, making automation frameworks robust for large projects
