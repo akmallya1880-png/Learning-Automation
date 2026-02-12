@@ -488,4 +488,10 @@ I always prefer ID  for performance and stability. XPath is used when elements a
 6.Flipkart Dynamic element
 //a[contains(.,'Oppo Mobiles')]
 ***********************************************************************
+7.How to handle branches with large teams? I have branch for release 6.0 and advance release branch for release 6.1?
+If only 6.0 is to be released, I branch from release/6.0, apply the fix, merge it back only into 6.0, and release without touching 6.1
+***********************************************************************
+8.How do handle conflict in code?
+When conflicts occur across parallel releases, I analyze business intent before resolving, manually merge correct logic, validate through tests, and then commit the clean version.
+***********************************************************************
 
