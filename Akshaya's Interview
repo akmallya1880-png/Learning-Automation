@@ -502,3 +502,13 @@ Faster Debugging
 Better Scalability
 Supports Agile & CI/CD
 POM improves maintainability, reusability, readability, and scalability by separating UI elements from test logic, making automation frameworks robust for large projects
+***********************************************************************
+10. Manual And Automation Advantage
+| Manual | Selenium |
+| --- | --- |
+| Slow Pace | Fast Pace |
+| Human Effort | Runs Automatically |
+| Error Prone | Consistent |
+| Not Reusable | Scripts |
+| Good for UI And Adhoc | Best For Regression |
+***********************************************************************
