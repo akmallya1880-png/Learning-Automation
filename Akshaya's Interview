@@ -420,4 +420,72 @@ foreach(char c in input)
         sum += int.Parse(c.ToString());
 }
 ***********************************************************************
+///====MindTree====/// L1
+1.Sorting in ascending order
+//array {0,1,0,1}
+
+using System;
+using System.Collections.Generic;
+class Program
+{
+    public static void Main()
+    {
+        int []arr={0,1,0,1};
+        Array.Sort(arr);
+        foreach(var t in arr)
+        {
+            Console.Write(t+" ");
+        }
+    }
+}
+***********************************************************************
+2.What are OOPS concept used in the framework
+E – Encapsulation → Page Objects
+I – Inheritance → BaseTest
+A – Abstraction → Interfaces / Helpers
+P – Polymorphism → Multi-browser support
+Encapsulation is used in Page Objects, inheritance in BaseTest classes, abstraction via interfaces and helper layers, and polymorphism for multi-browser execution.
+***********************************************************************
+3.What is the Output for this Program and How will you handle
+using System;
+using System.Collections.Generic;
+class Program
+{
+    public static void Main()
+    {
+       int[] numbers={0,1,2}; 
+Console.WriteLine(numbers[3]);
+    }
+}
+Answer: This throws index out of bound
+Never Hardcode Index Values
+Always depend on:
+• Length
+• Count
+• Dynamic size
+This prevents future crashes when data grows.
+***********************************************************************
+4.Manual to Automation Switching career?
+Step 1 — Built strong basics first
+Step 2 — Converted real manual test cases
+Step 3 — Learned framework approach
+Step 4 — Integrated with Agile process
+Step 5 — Continuous improvement
+I strengthened my programming basics, automated real manual test cases using a structured framework, and aligned automation with Agile sprints to gradually move into a hybrid automation role.
+***********************************************************************
+5.What are the types of locators?
+ID
+Name
+CSS Selector
+XPath
+Link Text
+Class Name
+Tag Name
+Linktext
+Partial Linktext
+I always prefer ID  for performance and stability. XPath is used when elements are dynamic or complex.
+***********************************************************************
+6.Flipkart Dynamic element
+//a[contains(.,'Oppo Mobiles')]
+***********************************************************************
 
