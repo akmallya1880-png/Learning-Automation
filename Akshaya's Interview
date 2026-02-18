@@ -512,3 +512,82 @@ POM improves maintainability, reusability, readability, and scalability by separ
 | Not Reusable | Scripts |
 | Good for UI And Adhoc | Best For Regression |
 ***********************************************************************
+///====Innova Solutions===///L1
+1.Rotate an array twice
+int[]arr={1,2,3,4,5,6};
+o/p={5,6,1,2,3,4}
+****Logic 1***
+int[] arr = {1,2,3,4,5,6};
+int k = 2;
+int n = arr.Length;
+
+Reverse(arr, 0, n-1);
+Reverse(arr, 0, k-1);
+Reverse(arr, k, n-1);
+
+foreach(int x in arr)
+    Console.Write(x + " ");
+
+static void Reverse(int[] a, int start, int end)
+{
+    while(start < end)
+    {
+        int temp = a[start];
+        a[start] = a[end];
+        a[end] = temp;
+        start++;
+        end--;
+    }
+}
+****Logic 2 *****
+int[] arr = {1,2,3,4,5,6};
+int k = 2;
+
+var rotated = arr.Skip(arr.Length - k)
+                 .Concat(arr.Take(arr.Length - k))
+                 .ToArray();
+
+foreach(var x in rotated)
+    Console.Write(x + " ");
+***********************************************************************
+2.Explain Framework
+In our automation framework, we follow a layered architecture mainly to separate responsibilities and reduce maintenance cost.
+The Base layer handles all cross-cutting concerns like WebDriver lifecycle, configuration, and reporting.
+The Page Object layer encapsulates UI structure and behavior — locators and actions stay there so UI changes don’t break tests.
+The Test layer focuses only on business scenarios and assertions.
+This structure allows us to scale tests, switch browsers, and absorb UI changes with minimal impact.
+***********************************************************************
+3.Explain CI/CD
+CI/CD is a process where every code change is automatically built, tested, and deployed.”
+In my projects:
+Developers push code to Git
+CI tool triggers build
+Automation tests (Selenium + API) run
+Reports generated
+If passed → deployed to next environment
+This helps catch bugs early and speeds up releases.
+***********************************************************************
+4.Roles and Responsibilites as Lead
+As a Lead SDET:
+I design automation framework, decide test strategy, review code, integrate CI/CD, mentor team, and ensure overall product quality.”
+As an Individual Contributor:
+I write and execute test cases, automate scenarios, debug failures, log defects, and maintain automation scripts.
+***********************************************************************
+What is CRM domain?
+CRM is a business domain focused on managing customer interactions such as sales, support, and billing workflows.
+In my project, we handled customer lifecycle, order processing, and payment-related integrations.
+(So yes — partially finance related when payments/invoices exist.)
+*********************************************************************
+Where Test Cases Are Maintained
+We maintain test cases in Azure DevOps Test Plans or Jira with plugins like Zephyr/Xray, linked to user stories for full traceability.
+*********************************************************************
+How I Decide What to Automate
+I automate business-critical, stable, frequently used regression scenarios that give good ROI.
+I avoid automating one-time tests and frequently changing UI features.
+*********************************************************************
+API Automation Experience
+Yes, I manually test APIs by validating status codes, response body, schema, headers, and negative scenarios, and integrated them into CI pipeline.
+*********************************************************************
+JSON vs Excel 
+JSON is mainly used for structured data exchange in APIs and automation, while Excel is used for test data management and reporting.
+*********************************************************************
