@@ -512,6 +512,76 @@ POM improves maintainability, reusability, readability, and scalability by separ
 | Not Reusable | Scripts |
 | Good for UI And Adhoc | Best For Regression |
 ***********************************************************************
+///====LTMindTree====///L2
+Create a method with browser as parameter and initialize Chrome & Firefox driver
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
+using System;
+
+public class ClassA
+{
+    public static IWebDriver Browser1(string browser)
+    {
+        IWebDriver driver;
+
+        if (browser.ToLower() == "chrome")
+        {
+            driver = new ChromeDriver();
+        }
+        else if (browser.ToLower() == "firefox")
+        {
+            driver = new FirefoxDriver();
+        }
+        else
+        {
+            throw new Exception("Browser not supported");
+        }
+
+        driver.Manage().Window.Maximize();
+        return driver;
+    }
+}
+Call that method (browser1) from Class B
+using NUnit.Framework;
+using OpenQA.Selenium;
+
+[TestFixture]
+public class ClassB
+{
+    IWebDriver driver;
+
+    [SetUp]
+    public void Setup()
+    {
+        driver = ClassA.Browser1("chrome");   // calling from Class A
+        driver.Navigate().GoToUrl("https://www.google.com");
+    }
+
+    [Test]
+    public void VerifyTitle()
+    {
+        Assert.That(driver.Title.Contains("Google"));
+    }
+
+    [TearDown]
+    public void CloseBrowser()
+    {
+        driver.Quit();
+    }
+}
+***********************************************************************
+Amazon in webpage 
+Echo And Alexa
+//a[contains(@class,'hmenu-item')]//div[text()='Echo & Alexa']
+***********************************************************************
+Different types of Access Modifier
+C# has six access modifiers: private, protected, internal, public, protected internal, and private protected. They control accessibility at class level, inheritance level, and assembly level.
+***********************************************************************
+Difference between Protected And Internal
+Protected → Accessible within class and derived classes only.
+Internal → Accessible anywhere within the same assembly.
+***********************************************************************
 ///====Innova Solutions===///L1
 1.Rotate an array twice
 int[]arr={1,2,3,4,5,6};
@@ -591,3 +661,4 @@ Yes, I manually test APIs by validating status codes, response body, schema, hea
 JSON vs Excel 
 JSON is mainly used for structured data exchange in APIs and automation, while Excel is used for test data management and reporting.
 *********************************************************************
+
