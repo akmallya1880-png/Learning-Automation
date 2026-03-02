@@ -661,4 +661,19 @@ Yes, I manually test APIs by validating status codes, response body, schema, hea
 JSON vs Excel 
 JSON is mainly used for structured data exchange in APIs and automation, while Excel is used for test data management and reporting.
 *********************************************************************
-
+///====Innova Solutions===///L2
+Method 1
+int[] arr = {13, 14, 89, 19, 10};
+// Index 2 = arr[2] = 89
+Console.WriteLine(arr[2]); // Output: 89
+Method 1
+int[] arr = {13, 14, 89, 19, 10};
+int idx = Array.IndexOf(arr, 89);
+Console.WriteLine(idx); 
+*********************************************************************
+How do you handle flaky testcases?
+To fix flaky tests I use — Explicit Waits instead of Thread.Sleep, Retry attribute in NUnit, handle StaleElementException, use unique test data, and capture screenshots on failure for debuggin
+*********************************************************************
+Pipelines in Azure Devops?
+In my project, I configured Azure Pipeline with 3 stages — Build, Test, and Report. Selenium tests run automatically on every pull request, screenshots are captured on failure, and test results are published as artifacts in Azure DevOps.
+*********************************************************************
