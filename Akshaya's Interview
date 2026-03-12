@@ -677,3 +677,28 @@ To fix flaky tests I use — Explicit Waits instead of Thread.Sleep, Retry attri
 Pipelines in Azure Devops?
 In my project, I configured Azure Pipeline with 3 stages — Build, Test, and Report. Selenium tests run automatically on every pull request, screenshots are captured on failure, and test results are published as artifacts in Azure DevOps.
 *********************************************************************
+///====CTS===///L1
+1.Number Pymnraid
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int number = 1;
+
+        for (int i = 1; i <= 4; i++)   // rows
+        {
+            for (int j = 1; j <= i; j++)   // numbers in each row
+            {
+                Console.Write(number + " ");
+                number++;
+            }
+            Console.WriteLine();
+        }
+    }
+}
+*********************************************************************
+Url:https://money.rediff.com/index.html
+https://money.rediff.com/index.html
+*********************************************************************
