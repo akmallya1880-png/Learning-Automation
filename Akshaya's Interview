@@ -700,7 +700,7 @@ class Program
 }
 *********************************************************************
 Url:https://money.rediff.com/index.html
-https://money.rediff.com/index.html
+//a[contains(text(),'BSE 200')]/parent::li//following::a[contains(text(),'View')]
 *********************************************************************
 Automation Test Stragery
 Automation Test Strategy defines the overall approach for implementing automation testing in a project, including tools, framework, scope, execution plan, reporting, and maintenance of automated test scripts.
