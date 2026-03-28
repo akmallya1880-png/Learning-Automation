@@ -751,3 +751,146 @@ class Program
         }
     }
 }
+*********************************************************************
+///====Infosys===///L1
+1.Write selenium syntax to handle "Shift+E" -Keyboard stimulation
+IWebElement element = driver.FindElement(By.Id("yourElementId"));
+
+Actions actions = new Actions(driver);
+actions
+    .Click(element)
+    .KeyDown(Keys.Shift)
+    .SendKeys("e")
+    .KeyUp(Keys.Shift)
+    .Perform();
+*********************************************************************
+2.Write selenium syntax to handle screenshot
+ITakesScreenshot ts = (ITakesScreenshot)driver;
+Screenshot screenshot = ts.GetScreenshot();
+screenshot.SaveAsFile("C:\\Screenshots\\Error.png", ScreenshotImageFormat.Png);
+Explanation:
+ITakesScreenshot is an interface implemented by WebDriver.
+GetScreenshot() captures the current browser window.
+SaveAsFile() saves the image to a specified location.
+*********************************************************************
+3.How do you handle Web Tables? when ID and name is given
+I handle web tables by iterating through rows and cells using dynamic XPath or reusable utility methods to extract or validate data.
+var rows = driver.FindElements(By.XPath("//table/tbody/tr"));
+foreach (var row in rows)
+{
+var cols = row.FindElements(By.TagName("td"));
+foreach (var col in cols)
+{
+Console.WriteLine(col.Text);
+}
+}
+*********************************************************************
+4.You have several button and click on one specific button
+IList<IWebElement> buttons = driver.FindElements(By.TagName("button"));
+
+foreach (IWebElement btn in buttons)
+{
+    if (btn.Text.Equals("Submit"))
+    {
+        btn.Click();
+        break;
+    }
+}
+*********************************************************************
+5.how to fetch data from excel?
+[Test]
+public void LoginTest()
+{
+    test = extent.CreateTest("Login Test");
+
+    string username = ExcelHelper.ReadData("TestData.xlsx", 1, 0);
+    string password = ExcelHelper.ReadData("TestData.xlsx", 1, 1);
+
+    test.Log(Status.Info, "Reading data from Excel");
+
+    LoginPage login = new LoginPage(driver);
+    login.Login(username, password);
+
+    test.Log(Status.Pass, "Login successful");
+}
+*********************************************************************
+6.How do you handle authentication?
+In real projects, I’ve noticed that authentication popups can vary across test environments — so I usually discuss with the dev/infra team whether we can switch to token-based or cookie-based login in automation to make the scripts more stable.
+*********************************************************************
+7.How do you handle exception handling for StaleElementReferenceException ?
+StaleElementReferenceException → element is outdated after page reload/DOM change.
+*********************************************************************
+8.Explain CRM workflow?
+A workflow in Dynamics 365 is an automation tool used to execute business logic such as sending emails, assigning records, or updating fields based on predefined triggers and conditions. It helps streamline processes and reduce manual effort.
+*********************************************************************
+9.How do you handle dynamnic dropdown?
+A dynamic drop-down loads options at runtime using JavaScript or AJAX. It is handled by triggering the event, waiting for elements to load, capturing all options using findElements(), iterating through them, and selecting the required value.
+*********************************************************************
+10.remove duplicates  int[]a={1, 2, 2, 3, 4, 4};
+using System;
+using System.Collections.Generic;
+class Program
+{
+public static void Main()
+{
+int[]a={1, 2, 2, 3, 4, 4};
+HashSet<int> duplicate= new HashSet<int>(a);
+foreach(var item in duplicate)
+{
+Console.Write(item+" ");
+}
+}
+}
+*********************************************************************
+11.Make my trip inspect "New Delhi" in the travel from
+//input[@value='New Delhi']
+*********************************************************************
+12.can main method be overloaded?
+Yes, the Main method can be overloaded in C#. However, the CLR will only consider specific signatures like static void Main(string[] args) or static int Main() as the entry point. Any overloaded versions are treated like normal methods and must be called explicitly.
+This is similar to any method overloading, but special because Main has restrictions due to being the program entry point
+*********************************************************************
+13.How do you handle exception handling and if you know this might throw an exception?
+I handle exceptions in C# using try-catch-finally blocks. I catch only specific exceptions instead of generic ones, log the error details for debugging, and ensure proper cleanup using finally or using statements. I also avoid swallowing exceptions and rethrow them when needed to maintain proper error flow.
+*********************************************************************
+///====CloudAngles===///L1
+1.Explain framework
+In our automation framework, we follow a layered architecture mainly to separate responsibilities and reduce maintenance cost.
+The Base layer handles all cross-cutting concerns like WebDriver lifecycle, configuration, and reporting.
+The Page Object layer encapsulates UI structure and behavior — locators and actions stay there so UI changes don’t break tests.
+The Test layer focuses only on business scenarios and assertions.
+This structure allows us to scale tests, switch browsers, and absorb UI changes with minimal impact.
+*********************************************************************
+2.Explain encapsulation?
+Hiding internal data and exposing only required methods.
+Framework usage
+- Page Object Model
+- Protect locators from test classes
+*********************************************************************
+3.What is shift left approach and shift right approach?
+Shift Left approach means performing testing activities early in the SDLC to identify defects sooner and reduce cost. Shift Right approach focuses on testing in production or near-production environments to understand real user behavior and improve the application continuously
+*********************************************************************
+4.remove duplicates from string
+using System;
+using System.Collections.Generic;
+using System.Linq;
+class Program
+{
+    public static void Main()
+    {
+        string name="akshaya mallya";
+        char[]chars=name.Replace(" ","").ToArray();
+        HashSet<char> unique= new HashSet<char>(chars);
+        foreach(var item in unique)
+        {
+            Console.Write(item+" ");
+        }
+        
+    }
+}
+*********************************************************************
+5.https://www.makemytrip.com/
+write a generic link to navigate from  flights to  Travel Insurance
+span[@data-cy='item-wrapper']
+or
+//li/parent::ul[@class='makeFlex font12 headerIconsGap']//following::span[@data-cy='item-wrapper']
+*********************************************************************
