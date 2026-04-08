@@ -1007,4 +1007,16 @@ The Page Object layer encapsulates UI structure and behavior — locators and ac
 The Test layer focuses only on business scenarios and assertions.
 This structure allows us to scale tests, switch browsers, and absorb UI changes with minimal impact.
 *********************************************************************
+7.What are the types of locators?
+ID
+Name
+CSS Selector
+XPath
+Link Text
+Class Name
+Tag Name
+Linktext
+Partial Linktext
+I always prefer ID  for performance and stability. XPath is used when elements are dynamic or complex.
+*********************************************************************
 
