@@ -894,3 +894,116 @@ span[@data-cy='item-wrapper']
 or
 //li/parent::ul[@class='makeFlex font12 headerIconsGap']//following::span[@data-cy='item-wrapper']
 *********************************************************************
+///====Quadrant Technology===///L1
+1.How do you handle flaky testcases?
+**Root cause categories:**
+→ Timing – wrong wait strategy
+Fix: explicit waits
+→ Test data – shared state
+Fix: test independence
+→ Environment – infra instability
+Fix: retry + investigation
+→ Test design – poor architecture
+Fix: redesign
+
+**Your process:**
+→ Flaky test tracker
+→ 3 failures = quarantine
+→ Fix root cause first
+→ Re-add only after fix
+
+**Retry logic = LAST RESORT**
+Not first response key line
+*********************************************************************
+2.Explain Framework?
+In our automation framework, we follow a layered architecture mainly to separate responsibilities and reduce maintenance cost.
+The Base layer handles all cross-cutting concerns like WebDriver lifecycle, configuration, and reporting.
+The Page Object layer encapsulates UI structure and behavior — locators and actions stay there so UI changes don’t break tests.
+The Test layer focuses only on business scenarios and assertions.
+This structure allows us to scale tests, switch browsers, and absorb UI changes with minimal impact.
+*********************************************************************
+3.Scrum Master Role 
+I've had the opportunity to act as a Scrum Master for 6 months for a new team, where I improved our Agile ceremonies and brought process enhancements to the team.
+*********************************************************************
+4.CI/CD integration 
+ CI/CD integration  means our automation tests are connected with  Azure DevOps. Whenever new code is pushed, the pipeline automatically builds the project, runs NUnit Selenium test cases, and generates reports. This helps us identify issues quickly without running tests manually.
+*********************************************************************
+5.20 test cases are given from manual how will you priotize automation testing
+**1. The approach**
+→ Risk-based prioritisation
+→ High frequency + high business impact = automate first
+
+**2. The pyramid**
+→ Unit tests (devs own)
+→ API tests (fast, reliable)
+→ UI automation (end-to-end only)
+
+**3. What NOT to automate  key**
+→ One-time scenarios
+→ Frequently changing UI
+→ Exploratory testing
+
+**4. How you track it**
+→ % of regression suite automated
+→ Reported to stakeholders per sprint
+*********************************************************************
+///====Quadrant Technology===///L2
+1.Count occurance 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Program
+{
+    public static void Main()
+    {
+        int[] a = { 1, 2, 3, 45, 6, 2 };
+        int[] b = { 4, 5, 78, 90, 2, 3, 4 };
+
+        // Combine both arrays
+        int[] combined = a.Concat(b).ToArray();
+
+        // Count occurrence of each number
+        Dictionary<int, int> count = new Dictionary<int, int>();
+
+        foreach (int num in combined)
+        {
+            if (count.ContainsKey(num))
+            {
+                count[num]++;
+            }
+            else
+            {
+                count[num] = 1;
+            }
+        }
+
+        // Print result
+        foreach (var item in count)
+        {
+            Console.WriteLine(item.Key + " occurs " + item.Value + " times");
+        }
+    }
+}
+*********************************************************************
+2.Amazon Xpath
+For Fresh
+*********************************************************************
+3.Frequent Exception Handling
+Frequently faced exceptions are NoSuchElementException, StaleElementReferenceException, TimeoutException, and ElementClickInterceptedException
+*********************************************************************
+4.Regression Testing
+Regression time for 1000 automation test cases depends on execution time per test and parallelization. If executed sequentially, it can take more than 15 hours. In our framework, we use parallel execution with NUnit and CI/CD pipelines to reduce execution time to around 1–3 hours
+*********************************************************************
+5.how often do you run CI/CD
+In my project, CI/CD runs automatically whenever code is pushed to Git or a pull request is raised. We also run nightly regression suites and before every release
+*********************************************************************
+6.Explain Framework
+Explain Framework?
+In our automation framework, we follow a layered architecture mainly to separate responsibilities and reduce maintenance cost.
+The Base layer handles all cross-cutting concerns like WebDriver lifecycle, configuration, and reporting.
+The Page Object layer encapsulates UI structure and behavior — locators and actions stay there so UI changes don’t break tests.
+The Test layer focuses only on business scenarios and assertions.
+This structure allows us to scale tests, switch browsers, and absorb UI changes with minimal impact.
+*********************************************************************
+
