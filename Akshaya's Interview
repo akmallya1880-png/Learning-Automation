@@ -1019,4 +1019,11 @@ Linktext
 Partial Linktext
 I always prefer ID  for performance and stability. XPath is used when elements are dynamic or complex.
 *********************************************************************
-
+8.How do we fetch thousands of data for automation?
+We generally use data-driven framework approach. If the data volume is large, we prefer CSV, JSON, or database instead of Excel because they are faster and easier to maintain. We read the data using helper methods and execute the same automation flow for multiple records
+If they ask why not hardcode:
+Hardcoding thousands of records makes scripts difficult to maintain, increases code size, and any data change requires code change. External data files make the framework reusable and scalable.
+*********************************************************************
+9.How do we not show  credentials and passwords in the repository?
+We do not keep credentials inside code because anyone can see them in the repository. We store them separately in environment variables or secret files and exclude them from Git.
+*********************************************************************
