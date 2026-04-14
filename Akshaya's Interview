@@ -1000,7 +1000,7 @@ Regression time for 1000 automation test cases depends on execution time per tes
 In my project, CI/CD runs automatically whenever code is pushed to Git or a pull request is raised. We also run nightly regression suites and before every release
 *********************************************************************
 6.Explain Framework
-Explain Framework?
+
 In our automation framework, we follow a layered architecture mainly to separate responsibilities and reduce maintenance cost.
 The Base layer handles all cross-cutting concerns like WebDriver lifecycle, configuration, and reporting.
 The Page Object layer encapsulates UI structure and behavior — locators and actions stay there so UI changes don’t break tests.
@@ -1027,3 +1027,179 @@ Hardcoding thousands of records makes scripts difficult to maintain, increases c
 9.How do we not show  credentials and passwords in the repository?
 We do not keep credentials inside code because anyone can see them in the repository. We store them separately in environment variables or secret files and exclude them from Git.
 *********************************************************************
+///====NStarX India Pvt Ltd_Hyderabad===///
+1.Program for Prime number
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int numbers = 100;
+
+        for (int i = 2; i <= numbers; i++)
+        {
+            bool isPrime = true;
+
+            for (int j = 2; j <= i / 2; j++)
+            {
+                if (i % j == 0)
+                {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime)
+            {
+                Console.WriteLine(i);
+            }
+        }
+    }
+}
+*********************************************************************
+2.Reversal of string
+using System;
+
+public class program
+{
+    public static void Main(string[] args)
+    {
+       string name="This is useful";
+       string reverse="";
+       for(int i=name.Length-1;i>=0;i--)
+       {
+           reverse+=name[i];
+       }
+       Console.WriteLine(reverse);
+    }
+}
+*********************************************************************
+3.git for adding branch
+git add
+git commit -m "automation new code"
+git push origin dev
+*********************************************************************
+4.git for switching new branch
+git switch -c feature-login
+*********************************************************************
+5.What is Agile Methodolgy?
+Agile is incremental delivery + fast feedback.
+Key components:
+Sprint (2 weeks)
+User stories
+Backlog grooming
+Daily standup
+Sprint review & retrospective
+*********************************************************************
+6.Annotations in Nunit
+[TestFixture]
+[Test]
+[SetUp]
+[TearDown]
+[OneTimeSetUp]
+[OneTimeTearDown]
+[TestCase]
+[Ignore]
+[Category]
+[Parallelizable]
+*********************************************************************
+7.What are the types of locators?
+ID
+Name
+CSS Selector
+XPath
+Link Text
+Class Name
+Tag Name
+Linktext
+Partial Linktext
+I always prefer ID  for performance and stability. XPath is used when elements are dynamic or complex.
+***********************************************************************
+8.What is Regression testing suite?
+Regression testing = checking that old functionality didn’t break after changes
+Regression Suite contains:
+Critical business flows
+High-risk areas
+Previously failed test cases
+Smoke + sanity + core workflows
+********************************************************************************
+Initialize browser ,navigate and multiple windows handle
+IWebDriver driver = new ChromeDriver();
+driver.Manage().Window.Maximize();
+driver.Navigate().GoToUrl("https://example.com");
+string parentWindow = driver.CurrentWindowHandle;
+
+// Click action that opens new window
+driver.FindElement(By.Id("openWindow")).Click();
+
+// Get all window handles
+var allWindows = driver.WindowHandles;
+
+foreach (string window in allWindows)
+{
+    if (window != parentWindow)
+    {
+        driver.SwitchTo().Window(window);
+        break;
+    }
+********************************************************************************
+How will you handle Alert and its types with syntax?
+In Selenium C#, I handle alerts using driver.SwitchTo().Alert(). Depending on the alert type, I use Accept() for OK, Dismiss() for Cancel, and SendKeys() for entering text. I also use WebDriverWait to handle synchronization issues when the alert takes time to appear.
+Syntax:
+IAlert alert = driver.SwitchTo().Alert();
+alert.Accept();
+alert.Dismiss();
+string text = alert.Text;
+alert.SendKeys("Text");
+Types:
+Simple Alert – shows a message and has an OK button.
+Confirmation Alert – shows a message with OK and Cancel buttons.
+Prompt Alert – accepts text input along with OK and Cancel button
+
+********************************************************************************
+Explain Framework
+
+In our automation framework, we follow a layered architecture mainly to separate responsibilities and reduce maintenance cost.
+The Base layer handles all cross-cutting concerns like WebDriver lifecycle, configuration, and reporting.
+The Page Object layer encapsulates UI structure and behavior — locators and actions stay there so UI changes don’t break tests.
+The Test layer focuses only on business scenarios and assertions.
+This structure allows us to scale tests, switch browsers, and absorb UI changes with minimal impact.
+********************************************************************************
+Frequent Exception Handling
+Frequently faced exceptions are NoSuchElementException, StaleElementReferenceException, TimeoutException, and ElementClickInt
+********************************************************************************
+Explain CRM workflow?
+A workflow in Dynamics 365 is an automation tool used to execute business logic such as sending emails, assigning records, or updating fields based on predefined triggers and conditions. It helps streamline processes and reduce manual effort.
+********************************************************************************
+What are OOPS concept used in the framework
+E – Encapsulation → Page Objects
+I – Inheritance → BaseTest
+A – Abstraction → Interfaces / Helpers
+P – Polymorphism → Multi-browser support
+Encapsulation is used in Page Objects, inheritance in BaseTest classes, abstraction via interfaces and helper layers, and polymorphism for multi-browser execution.
+***********************************************************************
+Do you run local scripts or git?
+I write and debug automation scripts locally in my IDE. Once the code is stable, I push it to Git. From there, execution is triggered through CI/CD pipelines like Jenkins or Azure DevOps for continuous integration and reporting
+***********************************************************************
+Limitations of Selenium WebDriver
+Only Web Applications
+No Built-in Reporting
+No Built-in Test Management
+Cannot Handle Windows/OS-Level Popups
+Requires Programming Knowledge
+Synchronization Issues
+Browser Dependency
+No Support for Image-Based Testing
+Slow Execution (Compared to API Testing)
+Limited Support for CAPTCHA / OTP
+***********************************************************************
+Copilot usage in day to day activities reduces the speed of work
+Yes, Copilot improves work speed in automation by reducing manual coding effort and providing quick code suggestions. It helps in writing test scripts, locators, and reusable methods faster. However, I always review and optimize the generated code to ensure it follows best practices and does not introduce inefficiencies.”
+***********************************************************************
+Clicking on button
+To click a button, I first identify the element using a reliable locator like ID, XPath, or CSS selector. Then I use an explicit wait to ensure the element is clickable before performing the click action
+***********************************************************************
+Challenges faced in framework
+In my project, we migrated from a basic automation setup to a structured hybrid framework. Earlier, we had issues with hard-coded waits, duplicate code, and unstable scripts. We introduced reusable utilities, implemented explicit waits, centralized locators using Page Object Model, and integrated reporting tools. This improved stability, maintainability, and execution speed
+***********************************************************************
