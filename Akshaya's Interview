@@ -1203,3 +1203,6 @@ To click a button, I first identify the element using a reliable locator like ID
 Challenges faced in framework
 In my project, we migrated from a basic automation setup to a structured hybrid framework. Earlier, we had issues with hard-coded waits, duplicate code, and unstable scripts. We introduced reusable utilities, implemented explicit waits, centralized locators using Page Object Model, and integrated reporting tools. This improved stability, maintainability, and execution speed
 ***********************************************************************
+Xpath for amazon.in search box
+//input[@role='searchbox']
+**********************************************************************
