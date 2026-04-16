@@ -1027,7 +1027,7 @@ Hardcoding thousands of records makes scripts difficult to maintain, increases c
 9.How do we not show  credentials and passwords in the repository?
 We do not keep credentials inside code because anyone can see them in the repository. We store them separately in environment variables or secret files and exclude them from Git.
 *********************************************************************
-///====NStarX India Pvt Ltd_Hyderabad===///
+///====NStarX India Pvt Ltd_Hyderabad===///L1
 1.Program for Prime number
 using System;
 
@@ -1205,4 +1205,274 @@ In my project, we migrated from a basic automation setup to a structured hybrid 
 ***********************************************************************
 Xpath for amazon.in search box
 //input[@role='searchbox']
+**********************************************************************
+///====NStarX India Pvt Ltd_Hyderabad===///L2
+1.Out Keyword Output
+using System;
+
+class Program
+{
+    public static void Main()
+    {
+        int x;           // no need to initialize
+        number(out x);   // pass variable with 'out'
+        Console.WriteLine(x);
+    }
+
+    public static void number(out int x)
+    {
+        x = 2;      // MUST assign first
+        x = x + 1;  // now safe
+    }
+}
+O/P-3
+**********************************************************************
+2.Ref Keyword Example
+using System;
+
+class Program
+{
+    public static void Main()
+    {
+        int x = 5;           // must initialize
+        AddOne(ref x);       // pass with ref
+        Console.WriteLine(x);
+    }
+
+    public static void AddOne(ref int num)
+    {
+        num = num + 1;       // modify original value
+    }
+}
+0/P-6
+**********************************************************************
+3.Table employee 
+table 1 A
+table 2 B
+table 3 A
+Find duplicates from the table using Linq
+using System;
+using System.Linq;
+
+class Program
+{
+    public static void Main()
+    {
+        string[] employee = { "A", "B", "A" };
+
+        var duplicates = employee
+            .GroupBy(x => x)→ group same values
+            .Where(g => g.Count() > 1)→ only duplicates
+            .Select(g => g.Key);get the value (A)
+
+        foreach (var item in duplicates)
+        {
+            Console.WriteLine(item);
+        }
+    }
+}
+**********************************************************************
+4.Find duplicates from the table using SQL
+SELECT Name
+FROM Employee
+GROUP BY Name
+HAVING COUNT(*) > 1;
+**********************************************************************
+5.Have you used XML in your project
+XML is a hierarchical data format using tags.
+In C#, we use XDocument to read XML using Load, Descendants, and Value.
+In automation frameworks, XML is used to store configuration like browser and URL.
+Code in C#
+var doc = XDocument.Load("config.xml");
+string browser = doc.Descendants("Browser").First().Value;
+string url = doc.Descendants("URL").First().Value;
+Config File (XML)
+│
+├── Browser → Chrome
+├── URL → testsite.com
+└── Timeout → 30
+**********************************************************************
+6.Encapsulation and Abstraction in framework?
+Encapsulation:
+private By username = By.Id("user");
+Elements are private
+Access only via methods
+public void EnterUsername(string user)
+You protect elements from direct access
+Abstraction:
+public void Login(string user, string pass)
+Test just calls:
+loginPage.Login("admin", "123");
+It doesn’t care about:
+locators
+Selenium code
+We use encapsulation mainly in Page Object Model and utility classes by keeping elements and driver private and exposing only methods.
+We use abstraction by creating high-level reusable actions like Login(), WaitForElement(), and InitializeDriver(), so test cases remain simple and readable without handling internal Selenium logic.
+**********************************************************************
+///====Wipro Chennai===///L1
+1. Ref and Out Defintion
+Use ref → when the variable already has a value and you want to update it
+Use out → when the method is supposed to produce/output values
+**********************************************************************
+2.Explain Framework
+In our automation framework, we follow a layered architecture mainly to separate responsibilities and reduce maintenance cost.
+The Base layer handles all cross-cutting concerns like WebDriver lifecycle, configuration, and reporting.
+The Page Object layer encapsulates UI structure and behavior — locators and actions stay there so UI changes don’t break tests.
+The Test layer focuses only on business scenarios and assertions.
+This structure allows us to scale tests, switch browsers, and absorb UI changes with minimal impact.
+**********************************************************************
+3.What is Regression testing suite?
+Regression testing = checking that old functionality didn’t break after changes
+Regression Suite contains:
+Critical business flows
+High-risk areas
+Previously failed test cases
+Smoke + sanity + core workflows
+**********************************************************************
+4.Multitasking
+Multithreading is used to execute tests in parallel to reduce execution time. In automation frameworks, we use it along with NUnit parallel execution. To avoid conflicts, we use ThreadLocal WebDriver so each thread gets its own browser instance. This ensures thread safety and stable execution.
+**********************************************************************
+5.Inheritance
+using System;
+
+class Parent
+{
+    public void Show()
+    {
+        Console.WriteLine("This is Parent class");
+    }
+}
+
+class Child : Parent
+{
+    public void Display()
+    {
+        Console.WriteLine("This is Child class");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Child obj = new Child();
+        obj.Show();     // inherited
+        obj.Display();  // own method
+    }
+}
+**********************************************************************
+6.Hybrid Inheritance Program
+using System;
+
+// Interface 1
+interface ILogin
+{
+    void Login();
+}
+
+// Interface 2
+interface IDashboard
+{
+    void Dashboard();
+}
+
+// Base Class
+class BaseTest
+{
+    public void StartBrowser()
+    {
+        Console.WriteLine("Browser Started");
+    }
+}
+
+// Hybrid Inheritance
+class Test : BaseTest, ILogin, IDashboard
+{
+    public void Login()
+    {
+        Console.WriteLine("Login executed");
+    }
+
+    public void Dashboard()
+    {
+        Console.WriteLine("Dashboard loaded");
+    }
+}
+
+// Main
+class Program
+{
+    static void Main()
+    {
+        Test obj = new Test();
+
+        obj.StartBrowser(); // from Base class
+        obj.Login();        // from Interface
+        obj.Dashboard();    // from Interface
+    }
+}
+**********************************************************************
+7.list of numbers second largest number print value
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] numbers = { 10, 20, 5, 40, 30 };
+
+        int largest = int.MinValue;
+        int secondLargest = int.MinValue;
+
+        foreach (int num in numbers)
+        {
+            if (num > largest)
+            {
+                secondLargest = largest;
+                largest = num;
+            }
+            else if (num > secondLargest && num != largest)
+            {
+                secondLargest = num;
+            }
+        }
+
+        Console.WriteLine("Second Largest: " + secondLargest);
+    }
+}
+**********************************************************************
+8.write a c# program to parse a log file to get list of errors from it
+using System;
+using System.IO;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        var errors = File.ReadLines("log.txt")
+                         .Where(line => line.Contains("ERROR"));
+
+        foreach (var err in errors)
+        {
+            Console.WriteLine(err);
+        }
+    }
+}
+**********************************************************************
+9.Simple Login Program in Selenium
+public void Login(string user, string pass)
+{
+    EnterUsername(user);
+    EnterPassword(pass);
+    ClickLogin();
+}
+
+loginPage.Login("admin", "1234");
+**********************************************************************
+10.Selenium Driver why it is better than Playwright
+Selenium is widely used due to its strong community, language support, and flexibility in building frameworks. However, Playwright offers faster execution and built-in waits. In enterprise projects, Selenium is still preferred due to its maturity and ecosystem
+**********************************************************************
+11.CI/CD pipeline how does it run and when
+CI/CD pipeline automates the process of building, testing, and deploying applications. When code is pushed to the repository, the pipeline triggers automatically, builds the project, runs automation tests like Selenium, generates reports, and deploys the application if all tests pass. It can run on commits, pull requests, or scheduled triggers
 **********************************************************************
