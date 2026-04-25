@@ -1496,8 +1496,56 @@ YAML controls pipeline, .sln builds solution, .csproj manages dependencies
 4.What is the external tools used for excel 
 In automation, we use external libraries like EPPlus, NPOI, or ClosedXML to read and write Excel files. These tools help in data-driven testing without needing Excel installed.
 **********************************************************************
+5.API 401 and 404
 401 means the request is not authenticated, usually due to missing or invalid token. 404 means the requested resource or endpoint is not found on the server.
 401 = not authenticated, 404 = resource not found.
+**********************************************************************
+6.input field
+one not started
+second inprogress
+third completed
+validate three values without selenium wait
+var status1 = driver.FindElement(By.Id("status1")).GetAttribute("value");
+var status2 = driver.FindElement(By.Id("status2")).GetAttribute("value");
+var status3 = driver.FindElement(By.Id("status3")).GetAttribute("value");
 
+bool isValid =
+    status1 == "Not Started" &&
+    status2 == "In Progress" &&
+    status3 == "Completed";
 
+Console.WriteLine(isValid ? "Pass" : "Fail");
+**********************************************************************
+7.Explain screenshot
+ITakesScreenshot ts = (ITakesScreenshot)driver;
+Screenshot screenshot = ts.GetScreenshot();
+screenshot.SaveAsFile("C:\\Screenshots\\Error.png", ScreenshotImageFormat.Png);
+Explanation:
+ITakesScreenshot is an interface implemented by WebDriver.
+GetScreenshot() captures the current browser window.
+SaveAsFile() saves the image to a specified location.
+**********************************************************************
+8.dropdown is not select type
+driver.FindElement(By.Id("dropdown")).Click();
+var options = driver.FindElements(By.XPath("//ul[@id='menu']//li"));
+List<string> valuesToSelect = new List<string> 
+{ 
+    "Option1", 
+    "Option2", 
+    "Option3" 
+};
 
+foreach (var option in options)
+{
+    if (valuesToSelect.Contains(option.Text))
+    {
+        option.Click();
+    }
+}
+**********************************************************************
+There is conflict with Architect and yourself how do you resolve item
+First, I try to understand the architect’s perspective. Then I present my point with data or examples. We discuss and align on the best solution. If needed, we involve stakeholders to make a decision.
+**********************************************************************
+If a person is lacking anything how would you approach them
+I approach them in a supportive way, understand where they are struggling, and guide them with examples or knowledge sharing. I ensure they feel comfortable asking questions and track improvement over timeX
+**********************************************************************
