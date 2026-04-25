@@ -1476,3 +1476,28 @@ Selenium is widely used due to its strong community, language support, and flexi
 11.CI/CD pipeline how does it run and when
 CI/CD pipeline automates the process of building, testing, and deploying applications. When code is pushed to the repository, the pipeline triggers automatically, builds the project, runs automation tests like Selenium, generates reports, and deploys the application if all tests pass. It can run on commits, pull requests, or scheduled triggers
 **********************************************************************
+///====UST Global===///L1
+1.what are the  oops concepts used in selenium base class?
+Inheritance → Reuse Base Class
+Encapsulation → Protect driver
+Abstraction → Hide Selenium actions
+Polymorphism → Support multiple browsers
+In Selenium Base Class, we use inheritance to reuse common methods like driver setup. Encapsulation is used to protect the WebDriver. Abstraction helps hide reusable actions like click and sendKeys. Polymorphism is used to support multiple browsers like Chrome and Edge
+**********************************************************************
+2.CI/CD pipeline start to end stages
+Code → Prepare → Build → Test → Package → Deploy
+In pipelines, once code is pushed, it is fetched, built, and tested automatically. If tests pass, the build is packaged as an artifact and deployed to different environments, with logs generated at each step
+In our Azure DevOps pipeline, once code is pushed, the pipeline installs .NET, restores dependencies, builds the solution, and runs Selenium automation tests using NUnit. Finally, test results are published for reporting
+**********************************************************************
+3.which files talks with Azure devops and Visual studios
+Azure DevOps interacts with Visual Studio projects mainly through the YAML pipeline file, solution file, and project file. The pipeline file defines the steps, while the .sln and .csproj files are used to build and restore dependencies. Test and config files are used during execution
+YAML controls pipeline, .sln builds solution, .csproj manages dependencies
+**********************************************************************
+4.What is the external tools used for excel 
+In automation, we use external libraries like EPPlus, NPOI, or ClosedXML to read and write Excel files. These tools help in data-driven testing without needing Excel installed.
+**********************************************************************
+401 means the request is not authenticated, usually due to missing or invalid token. 404 means the requested resource or endpoint is not found on the server.
+401 = not authenticated, 404 = resource not found.
+
+
+
