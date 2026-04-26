@@ -1558,3 +1558,31 @@ Advantages of POM
 - Easy for multiple team members to work on the framework
 - Helps in cross-browser testing because the same page classes can be reused across browsers
 **********************************************************************
+ Hard Assert
+Definition: Stops execution immediately if the assertion fails.
+Behavior: Test case fails instantly and no further steps are executed.
+Used when: The step is critical (e.g., login failure → no point continuing)
+Soft Assert
+Definition: Continues execution even if assertion fails.
+Behavior: Collects all failures and reports at the end.
+Used when: You want to validate multiple elements in one test.
+**********************************************************************
+Verification
+Question: “Are we building the product right?”
+Focus: Process, design, and development correctness
+Type: Static testing (no execution required)
+Examples:
+Requirement review
+Design document review
+Code walkthrough
+Done before execution
+Validation
+Question: “Are we building the right product?”
+Focus: Final product meets user needs
+Type: Dynamic testing (execution required)
+Examples:
+Functional testing
+System testing
+UAT (User Acceptance Testing)
+Done after development
+**********************************************************************
