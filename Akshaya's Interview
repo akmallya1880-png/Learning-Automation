@@ -1549,3 +1549,12 @@ First, I try to understand the architect’s perspective. Then I present my poin
 If a person is lacking anything how would you approach them
 I approach them in a supportive way, understand where they are struggling, and guide them with examples or knowledge sharing. I ensure they feel comfortable asking questions and track improvement over timeX
 **********************************************************************
+Advantages of POM
+- Easy to maintain – if one locator changes, we update it only in one page class
+- Reusable code – same methods can be used in multiple test cases
+- Better readability – test cases look simple and easy to understand
+- Less duplicate code
+- Easy to scale when the application becomes bigger
+- Easy for multiple team members to work on the framework
+- Helps in cross-browser testing because the same page classes can be reused across browsers
+**********************************************************************
