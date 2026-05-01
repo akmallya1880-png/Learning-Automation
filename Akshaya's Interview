@@ -1647,6 +1647,76 @@ class calculation
     }
 }
 **********************************************************************
-Roles and Responibilites
+3.Roles and Responibilites
 I currently work as a Team Lead managing a team of 5 manual testers and 4 automation testers. My responsibilities include task allocation, tracking deliverables, mentoring the team, and ensuring quality delivery. Along with leadership responsibilities, I also work as an individual contributor on one project. Additionally, I prepare client dashboards, manage reporting activities, and handle internal as well as external audits with the required documentation
+**********************************************************************
+4.How Have You Worked in Agile?
+I have worked in Agile Scrum teams where we followed 2-week sprints. I participated in sprint planning, daily standups, backlog grooming, sprint reviews, and retrospectives. My role involved test planning, execution, defect tracking, coordinating with developers, and ensuring stories were completed within the sprint timeline.
+**********************************************************************
+5.Agile story point using Poker
+Planning Poker is an Agile estimation technique used to assign story points to user stories. Team members choose estimation cards individually, discuss differences, and agree on the effort required for the story
+**********************************************************************
+6.Agile Requirement phase and then bringing up if any challenges during the sprint
+In Agile, requirements are discussed before the sprint during backlog refinement and sprint planning. If any challenges occur during the sprint, they are immediately raised in standups or with the Scrum Master/Product Owner so the team can perform impact analysis and take corrective action quickly
+**********************************************************************
+7.If a database gets leaked from North America client to Middle east what steps would you take
+In such a situation, I would treat it as a critical data integrity issue because one client’s data should not be updated by another client or resource accidentally.
+As a Test Lead, my first step would be to immediately escalate the issue to the Project Manager, Development Team, and relevant stakeholders. Then I would perform impact analysis to identify which data and clients were affected.
+I would coordinate with the development and database teams to correct or restore the data and verify the root cause, whether it was due to human error, incorrect access permissions, or process gaps.
+After the fix, I would ensure complete regression and cross-client validation testing is performed to confirm proper data segregation. I would also recommend preventive measures such as role-based access control, restricted permissions, audit logs, and stronger validation processes to avoid similar issues in the future
+**********************************************************************
+8.Framework for Desktop,Application and Database
+We can build a hybrid automation framework where Desktop UI automation handles desktop workflows, Selenium  automates web transactions, and SQL/database validation verifies backend data integrity. This helps us achieve complete end-to-end testing from UI to database validation
+**********************************************************************
+9.API manual Database validation for 500 data rows
+For API manual testing, if the API processes 500 rows of data, I validate whether all 500 records are correctly saved in the database.
+Then I check the API response to confirm the transaction is successful.
+After that, I run SQL queries in the database to verify:
+All 500 rows are inserted
+No records are missing
+No duplicate data is present
+Values are stored correctly
+So basically, I compare the API data with the database data to ensure complete data accuracy and integrity
+**********************************************************************
+10.What are the  5 points who have being appreciate in Retro
+Appreciated for consistently bringing committed sprint status updates for developers and ensuring better sprint tracking.
+Appreciated for handling and supporting Luigi transaction-related activities effectively.
+Appreciated for adding design and requirement inputs from a user perspective, helping improve usability and clarity.
+Appreciated for successfully supporting and completing releases despite tight timelines and limited gaps.
+Appreciated for actively participating in discussions, collaboration activities, and overall team contributions during the sprint.
+**********************************************************************
+11.if you are not able to automate in the current sprint due to time constraint ?what would do?
+If automation cannot be completed in the current sprint due to time constraints, I ensure complete manual testing is done so the release is not impacted. I communicate the dependency or delay to the team, prioritize critical automation scenarios, and move the remaining automation to the next sprint while tracking it properly.
+**********************************************************************
+12.If two of your team has release?what would you do?
+If two teams have releases at the same time, I would first analyze the priority, business impact, release risk, and criticality of both releases.
+Based on that, I would allocate resources accordingly and ensure proper coordination between teams. If needed, I would personally support the high-priority or high-risk release while delegating experienced team members to support the other release.
+My focus would be to ensure both releases are completed smoothly without impacting quality or timelines through proper planning, communication, and resource management
+**********************************************************************
+13.As tester would is necessary domain knowlege or requirement document to avoid bug leakage?
+Yes, domain knowledge and requirement understanding are very important for a tester to avoid bug leakage.
+Requirement documents help us understand the expected functionality and acceptance criteria, while domain knowledge helps us validate the application from a real business and user perspective.
+With good understanding of both, we can identify edge cases, cover critical scenarios properly, and reduce the chances of defects reaching production.
+**********************************************************************
+14.Why should I take up? what will I lose if i do take you?
+I bring a combination of leadership, hands-on testing experience, and ownership mindset. I can manage teams, handle critical deliveries, and still contribute individually when needed.
+If you hire me, you’ll gain someone who focuses on quality, accountability, and smooth delivery. If not, you may miss a resource who can quickly adapt, take responsibility, and add value both technically and from a team management perspective
+**********************************************************************
+15.what are the question i asked for last 15 minutes for memory
+Roles and Responsibities
+Write a Program to count the numbers between 296 and 396
+Write a Program  using arthimetic operation 
+Agile Methodology — how to explain in interview
+Agile story point using Planning Poker
+Agile requirement phase and bringing up changes during sprint
+Agile requirement phase and bringing up challenges during sprint
+If database gets updated from North America client to Middle East client — how to handle escalation
+If data got updated by mistake.If data got updated by a resource — interview answer
+Framework for Desktop, Web Application, and Database automation testing
+API manual testing with database validation for 500 rows of data
+Retro appreciations — correcting and framing points professionally
+If automation cannot be completed in current sprint due to time constraints — what would you do?
+If two teams have release at same time — which team would you support?
+Is domain knowledge or requirement understanding necessary to avoid bug leakage?
+Why should we hire you? / What would we lose if we don’t hire you?
 **********************************************************************
