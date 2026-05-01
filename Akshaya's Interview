@@ -1586,3 +1586,67 @@ System testing
 UAT (User Acceptance Testing)
 Done after development
 **********************************************************************
+///====UPS Chennai===///L1
+1.Count the number between 296 and 396
+Logic 1:
+using System;
+using System.Collections.Generic;
+class Program
+{
+    public static void Main()
+    {
+        int count=0;
+        for(int i=296;i<396;i++)
+        {
+            count++;
+        }
+        Console.WriteLine("The count of the numbers are" + count);
+    }
+}
+Logic 2:
+using System;
+
+class Program
+{
+    public static void Main()
+    {
+        int count = 396 - 296 + 1;
+
+        Console.WriteLine("The count of the numbers is: " + count);
+    }
+}
+**********************************************************************
+2.Program for Arithmetic operation
+using System;
+using System.Collections.Generic;
+class calculation
+{
+    public void Addition(int x,int y)
+    {
+        Console.WriteLine("The Addition of two numbers"+ (x+y));
+    }
+      public void Substraction(int x,int y)
+    {
+        Console.WriteLine("The Substraction of two numbers"+ (x-y));
+    }
+    public void Multiplication(int x,int y)
+    {
+        Console.WriteLine("The Multiple of two numbers"+ (x*y));
+    }
+    public void Division(int x,int y)
+    {
+        Console.WriteLine("The Division of two numbers"+ (x/y));
+    }
+    public static void Main()
+    {
+        calculation d= new calculation();
+        d.Addition(10,5);
+        d.Substraction(45,19);
+        d.Multiplication(40,13);
+        d.Division(90,2);
+    }
+}
+**********************************************************************
+Roles and Responibilites
+I currently work as a Team Lead managing a team of 5 manual testers and 4 automation testers. My responsibilities include task allocation, tracking deliverables, mentoring the team, and ensuring quality delivery. Along with leadership responsibilities, I also work as an individual contributor on one project. Additionally, I prepare client dashboards, manage reporting activities, and handle internal as well as external audits with the required documentation
+**********************************************************************
