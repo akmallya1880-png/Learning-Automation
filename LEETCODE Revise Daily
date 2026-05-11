@@ -198,3 +198,38 @@ class Program
     }
 }
 *************************************************************************************************************
+Linked Question 2
+ Find Maximum Binary Gap for Number 529
+using System;
+using System.Collections.Generic;
+class Program
+{
+    public static void Main()
+    {
+        int number = 529;
+       string binary=Convert.ToString(number,2);
+       Console.WriteLine("Binary Representation"+binary);
+       int maxGap=0;
+       int currentGap=0;
+       bool counting=false;
+       foreach(var bit in binary)
+       {
+           if(bit=='1')
+           {
+               if(counting)
+               {
+                   maxGap=Math.Max(currentGap,maxGap);
+               }
+               counting=true;
+               currentGap=0;
+               
+           }
+           else if(counting)
+           {
+               currentGap++;
+           }
+       }
+       Console.WriteLine(maxGap);
+    }
+}
+*************************************************************************************************************
