@@ -233,3 +233,106 @@ class Program
     }
 }
 *************************************************************************************************************
+Linked Question 3:
+Second smallest Digit in a String: For example, if the input is "claude2403edualc", you need to find and return the digit 2.
+using System;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        string input = "claude2403edualc";
+
+        var result = input
+            .Where(char.IsDigit)          // take only digits
+            .Select(c => c - '0')         // convert char to int
+            .Distinct()                   // remove duplicates
+            .OrderBy(x => x)              // sort ascending
+            .Skip(1)                      // skip smallest
+            .FirstOrDefault();            // get second smallest
+
+        Console.WriteLine("Second smallest digit: " + result);
+    }
+}
+*************************************************************************************************************
+Linked Question 4:
+Count Word Occurrences in a Sentence: Given a string like "my name is Claude Claude", the goal is to print each word along with how many times it appears. "Claude" → 2 times Other words → 1 time each
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        string input = "my name is Claude Claude";
+
+        string[] words = input.Split(' ');
+
+        Dictionary<string, int> wordCount = new Dictionary<string, int>();
+
+        foreach (string word in words)
+        {
+            if (wordCount.ContainsKey(word))
+            {
+                wordCount[word]++;
+            }
+            else
+            {
+                wordCount[word] = 1;
+            }
+        }
+
+        foreach (var item in wordCount)
+        {
+            Console.WriteLine(item.Key + " → " + item.Value);
+        }
+    }
+}
+*************************************************************************************************************
+Linked Question 5:
+Reverse Each Word in a Sentence:
+Given "abc de f", reverse each word individually while keeping spaces in place. The expected output is "cba ed f.
+using System;
+using System.Linq;
+
+class Program
+{
+    public static void Main()
+    {
+        string input = "abc de f";
+
+        string reverse = "";
+
+        for (int i = input.Length - 1; i >= 0; i--)
+        {
+            reverse += input[i];
+        }
+
+        Console.WriteLine(reverse);
+    }
+}
+*************************************************************************************************************
+Linked Question 6:
+For instance, if you have arr1 = {5, 3, 2} and arr2 = {9, 0, 1}, the task is to merge them into one array, resulting in {5, 3, 2, 9, 0, 1}.
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Program
+{
+    public static void Main()
+    {
+        int[] arr1 = { 5, 3, 2 };
+        int[] arr2 = { 9, 0, 1 };
+
+        int[] combined = arr1.Concat(arr2).ToArray();
+
+        foreach (var item in combined)
+        {
+            Console.Write(item + " ");
+        }
+    }
+}
+*************************************************************************************************************
