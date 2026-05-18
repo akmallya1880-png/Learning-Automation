@@ -336,3 +336,23 @@ class Program
     }
 }
 *************************************************************************************************************
+Given a string s consisting of words and spaces, return the length of the last word in the string.A word is a maximal substring consisting of non-space characters only.
+using System;
+using System.Collections.Generic;
+class Program
+{
+    public static void Main()
+    {
+        string s="I am Ollie";
+        s=s.Trim();
+        int length=0;
+        for(int i=s.Length-1;i>=0;i--)
+        {
+            if(s[i]== ' ')
+            break;
+            length++;
+        }
+        Console.WriteLine(length);
+    }
+}
+*************************************************************************************************************
