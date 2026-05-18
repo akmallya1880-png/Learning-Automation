@@ -356,3 +356,17 @@ class Program
     }
 }
 *************************************************************************************************************
+Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
+using System;
+using System.Collections.Generic;
+class Program
+{
+    public static void Main()
+    {
+       string haystack = "sadbutsad";
+        string needle = "sad";
+        int index=haystack.IndexOf(needle);
+        Console.WriteLine(index);
+    }
+}
+*************************************************************************************************************
