@@ -370,3 +370,32 @@ class Program
     }
 }
 *************************************************************************************************************
+Write a C# program to find multiple missing numbers from an array.
+using System;
+using System.Collections.Generic;
+class Program
+{
+    public static void Main()
+    {
+          int[] arr = { 1, 2, 4, 6, 7, 9 };
+         Console.WriteLine("Missing Numbers are");
+         for(int i=1;i<=arr[arr.Length-1];i++)
+         {
+             bool found=false;
+             for(int j=0;j<arr.Length;j++)
+             {
+                 if(arr[j]==i)
+                 {
+                     found=true;
+                     break;
+                 }
+             }
+             if(!found)
+             {
+                 Console.WriteLine(i);
+             }
+         }
+         
+    }
+}
+*************************************************************************************************************
