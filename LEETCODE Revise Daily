@@ -399,3 +399,36 @@ class Program
     }
 }
 *************************************************************************************************************
+Write a C# program to find a single missing number from an array using the sum formula method.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Array with one missing number
+        int[] arr = { 1, 2, 4, 5 };
+
+        // Last number in sequence
+        int n = 5;
+
+        // Expected sum from 1 to n
+        int expectedSum = n * (n + 1) / 2;
+
+        // Variable to store actual array sum
+        int actualSum = 0;
+
+        // Loop through array and calculate sum
+        for (int i = 0; i < arr.Length; i++)
+        {
+            actualSum += arr[i];
+        }
+
+        // Find missing number
+        int missingNumber = expectedSum - actualSum;
+
+        // Print result
+        Console.WriteLine("Missing number is: " + missingNumber);
+    }
+}
+*************************************************************************************************************
