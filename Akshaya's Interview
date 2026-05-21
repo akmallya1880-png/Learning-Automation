@@ -1952,3 +1952,28 @@ Postman is mainly used for API execution and testing, whereas Swagger is used fo
 17.AI usage in day to day life
 I use Jira AI for test case generation and GitHub Copilot for automation coding assistance and reusable code generation
 **********************************************************************
+///==== Chennai===///L3
+1.Introduction about urself
+ 2.Explain framework
+ 3.String functionality
+ 4.What domains have you worked
+ 5.Multiple windows how you navigate
+ 6.How would click tabs in your windows
+ 7.How will select a particular element in the table (Table will keep changing) and spinner is there
+ 8.How will capture there is lot of elements in the dropdown
+ 9.Did you automate API?
+ 10.Desktop version did you automate ?
+ 11.How will achieve tight deadline for agile ceremonies?
+ 12.How will handle changing requirement in the middle of the sprint?
+ 13.Have you used Jenkins or anything else for CI/CD?
+ 14.Who reviews the code after PR?
+ 15.How do you check test coverage of the team?
+ 16.What suggestion do you give the Senior Test Lead for suggestion?
+ 17.Have you used Azure devops?what other tools have u used?
+ 18.How do you manage Business requirement in the current project if it is daily release?Doesnt it have automation?
+ 19.What type of testing you did in Xerox project in hcl?
+ 20.Have you handle RCA? What measures did you take for it?
+ 21.Have you used Azure Devops for dashboard preparation of testcases
+ 22.What Test management tools have you used till now?
+ 23.How many days will you join?
+**********************************************************************
