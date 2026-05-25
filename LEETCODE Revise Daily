@@ -432,3 +432,28 @@ class Program
     }
 }
 *************************************************************************************************************
+ Write a program to swap of two numbers 
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int a = 10;
+        int b = 20;
+
+        Console.WriteLine("Before Swap:");
+        Console.WriteLine("a = " + a);
+        Console.WriteLine("b = " + b);
+
+        // Swapping
+        int temp = a;
+        a = b;
+        b = temp;
+
+        Console.WriteLine("After Swap:");
+        Console.WriteLine("a = " + a);
+        Console.WriteLine("b = " + b);
+    }
+}
+*************************************************************************************************************
