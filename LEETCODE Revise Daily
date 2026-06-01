@@ -473,3 +473,33 @@ class Program
     }
 }
 *************************************************************************************************************
+Prove string is immutable
+using System;
+class Program
+{
+    public static void Main()
+    {
+           string str1 = "Hello";
+           Console.WriteLine("Before Changes");
+           Console.WriteLine(str1.GetHashCode());
+           str1+="World";
+            Console.WriteLine("After Changes");
+           Console.WriteLine(str1.GetHashCode());
+        
+    }
+}
+*************************************************************************************************************
+Count number of words in string
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string str = "  Hello   World   Welcome to   C#  ";
+
+        int count = str.Split(' ', StringSplitOptions.RemoveEmptyEntries).Length;
+
+        Console.WriteLine("Word Count: " + count);
+    }
+}
