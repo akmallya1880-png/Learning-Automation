@@ -504,3 +504,21 @@ class Program
     }
 }
 *************************************************************************************************************
+print first letter of each word
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string str = "Hello World Welcome To C Sharp";
+
+        string[] words = str.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+        foreach (string word in words)
+        {
+            Console.Write(word[0] + " ");
+        }
+    }
+}
+*************************************************************************************************************
